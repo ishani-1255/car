@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Tinkerspace Carnival</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="css/nice-select.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@300,400,500,600&display=swap" rel="stylesheet"> 
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+  </head>
+
+  <body>
+    
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .carnival-container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(236, 230, 145, 0.8);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .decorative-circle-1, .decorative-circle-2 {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .decorative-circle-1 {
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .decorative-circle-2 {
+            bottom: -20px;
+            left: -20px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #FF69B4, #FF1493);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .carnival-title {
+            color: #0181F5;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .events-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .event-section {
+            padding: 20px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .event-section h3 {
+            color: #fff;
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+        }
+
+        .carousel-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .carousel-item div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .carousel-item h4 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .carousel-item p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            opacity: 1;
+        }
+
+        .carousel-button.left {
+            left: 0;
+        }
+
+        .carousel-button.right {
+            right: 0;
+        }
+
+        #carousel-makespace { background: linear-gradient(145deg, #FF6B6B, #FFE66D); }
+        #carousel-conference { background: linear-gradient(145deg, #4ECDC4, #45B7D1); }
+   
+  </style>
+
+    <!-- slider_area_start -->
+    <div
+      class="slider_area slider_bg_1"
+      style="display: flex; justify-content: space-evenly"
+    >
+      <div class="slider_text">
+        <div class="container">
+          <div class="position_relv">
+            <!-- <h1 class="opcity_text d-none d-lg-block">CONFIRENCE</h1> -->
+            <div class="row" style="display: flex; justify-content: center; ">
+              <div class="col-xl-11">
+                <div class="title_text">
+                  <img src="./img/Group 52.png" alt="" />
+                  <a href="https://app.tinkerhub.org/event/OCGC5CJ9HO" class="boxed-btn-white" target="_blank" rel="noopener noreferrer">REGISTER NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clouds-container">
+            <img src="./img/Vector (3).png" class="cloud" alt="Cloud 1" />
+            <img src="./img/Vector (2).png" class="cloud" alt="Cloud 2" />
+            <img src="./img/Vector (1).png" class="cloud" alt="Cloud 3" />
+            <img src="./img/Vector (2).png" class="cloud" alt="Cloud 2" />
+            <img src="./img/Vector (1).png" class="cloud" alt="Cloud 3" />
+            <img src="./img/Vector (2).png" class="cloud" alt="Cloud 2" />
+
+            
+          </div>
+      </div>
+
+      <div class="countDOwn_area">
+        <div
+          class="container"
+          style="display: flex;flex-direction: column; justify-content: space-between;align-items: center;">
+          <div id="countdown" class="col-xl-3 col-md-6 col-lg-3" style="margin-bottom: 80px;">
+    <span id="timer">
+      <div class="timer-inner">
+        <span class="time-unit">33<span class="time-label">D</span></span>
+        <span class="time-unit">45<span class="time-label">H</span></span>
+        <span class="time-unit">56<span class="time-label">M</span></span>
+        <span class="time-unit">46<span class="time-label">S</span></span>
+    </div>
+    </span>
+</div>
+<div class="location">
+  <div class="col-xl-4 col-md-6 col-lg-4">
+    <div class="single_date">
+      <i class="ti-calendar"></i>
+      <span>14-15 Dec 2024</span>
+    </div>
+
+  </div>
+  <div class="col-xl-3 col-md-6 col-lg-3">
+
+
+    <div class="single_date">
+      <i class="ti-location-pin"></i>
+      <a href="https://maps.app.goo.gl/u5Buiwaz6CkWv7rTA" target="_blank" rel="noopener noreferrer">Tinkerspace,CUSAT</a>
+      <!-- <span>City Hall, New York City</span> -->
+    </div>
+  </div>
+</div>
+
+          <!-- <div class="col-xl-5 col-md-12 col-lg-5">
+                        <span id="clock"></span>
+                    </div> -->
+          
+        </div>
+      </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- about_area_start -->
+    <div class="about_area">
+      <div class="shape-1 d-none d-xl-block">
+        <img src="img/about/shap1.png" alt="" />
+      </div>
+      <div class="shape-2 d-none d-xl-block">
+        <img src="img/about/shap2.png" alt="" />
+      </div>
+      <div class="container" style="max-width: 90%;">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-md-6">
+            <div class="about_thumb">
+              <img src="img/tinkerspacedd41ed-removebg.png" alt="" />
+            </div>
+          </div>
+          <div class="col-xl-5 offset-xl-1 col-md-6">
+            <div class="about_info">
+              <div class="section_title">
+                <h2 style="color:  #0181F5; margin-bottom: 30px; font-size: 2.0rem; font-weight: 900; position: relative; ">
+                  ABOUT 
+             </h2>
+                <h3>
+                  TINKERSPACE <br />
+                  CARNIVAL<br />
+                  2024
+                </h3>
+              </div>
+              <p>
+                Get ready to celebrate TinkerSpace’s 2nd anniversary on December 14 and 15! This is more than just a party—it’s a tribute to the amazing community that’s built, learned, and created together. Enjoy project showcases, inspiring talks, and interactive sessions. Meet incredible people, share ideas, and celebrate the impact we’ve made as a team. Let’s keep the innovation alive—don’t miss out!!
+              </p>
+              <a href="https://tinkerhub.frappe.cloud/tinkerspace" class="boxed-btn-white about" target="_blank" rel="noopener noreferrer">LEARN MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- about_area_end -->
+
+
+
+
+<!-- Event Area Section -->
+<div class="event_area" style="background-color: #ece691; padding:1px; border-radius: 20px;">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+    <!-- Header Section -->
+    <div class="double_line">
+      <div class="row" style="background-color: #0181F5; border-radius: 15px; padding: 30px;">
+        <h1 class="vr_text d-lg-block" style="color: #fff; font-size: 2.5rem; letter-spacing: 5px; text-align: center; margin-bottom: 30px;">WORKSHOPS</h1>
+
+        <!-- Date Section -->
+        <div class="col-xl-3 col-lg-3" style="text-align: center;">
+          <div class="date" style="color: #fff; font-size: 1.8rem; font-weight: bold;">14 Dec 2024</div>
+        </div>
+
+        <!-- Day Information -->
+        <div class="col-xl-9 col-lg-9" style="color: #fff;">
+          <!-- Workshop Sessions -->
+         
+          <section style="font-family: 'Inter', system-ui, -apple-system, sans-serif;
+         
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 40px 20px;
+          animation: backgroundShift 20s ease infinite; ">
+            <div class="carnival-container">
+                <div class="decorative-circle-1"></div>
+                <div class="decorative-circle-2"></div>
+                
+                <h2 class="carnival-title">DAY 01 </h2>
+                
+                <div class="events-grid">
+                    <!-- MakerSpace Section -->
+                    <div class="event-section" style="background: linear-gradient(145deg, #FF6B6B, #FFE66D);">
+                        <h3>🎨 MakerSpace</h3>
+                        <div class="carousel" id="carousel-makespace">
+                            <div class="carousel-container">
+                                <div class="carousel-item">
+                                    <img src="https://i.ibb.co/mHPHfDj/game-design.png" alt="Robotics Workshop">
+                                    <div>
+                                        <h4>Game Development</h4>
+                                        <p>10:00 AM - 12:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://i.ibb.co/Vgpb174/Instagram-post-18-8.png" alt="3D Printing Demo">
+                                    <div>
+                                        <h4>Toy Making</h4>
+                                        <p>2:00 PM - 4:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="https://i.ibb.co/Bs37chd/origami.png" alt="Robotics Workshop">
+                                  <div>
+                                      <h4>Origami Workshop</h4>
+                                      <p>4:00 PM - 6:00 PM</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <button class="carousel-button left" onclick="moveCarousel('carousel-makespace', 'left')">&#10094;</button>
+                            <button class="carousel-button right" onclick="moveCarousel('carousel-makespace', 'right')">&#10095;</button>
+                        </div>
+                    </div>
+        
+                    <!-- Conference Hall Section -->
+                    <div class="event-section" style="background: linear-gradient(145deg, #4ECDC4, #45B7D1);">
+                        <h3>🎭 Conference Hall</h3>
+                        <div class="carousel" id="carousel-conference">
+                            <div class="carousel-container">
+                                <div class="carousel-item">
+                                    <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Keynote Address">
+                                    <div>
+                                        <h4>Networking Activity</h4>
+                                        <p>10:00 AM - 11:20 AM</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZAAQewtAO_UjGYnnHoAHEwduPutz80Muf2g&s" alt="Panel Discussion on AI">
+                                    <div>
+                                        <h4>Board Games</h4>
+                                        <p>11:20 AM -  12:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="https://i.ibb.co/mbthGF1/crochet.png" alt="Panel Discussion on AI">
+                                  <div>
+                                      <h4>Crochet Workshop</h4>
+                                      <p>2:00 PM -  4:00 PM</p>
+                                  </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="https://media.licdn.com/dms/image/v2/D5622AQHCzC59LQEA4A/feedshare-shrink_800/feedshare-shrink_800/0/1733634916537?e=2147483647&v=beta&t=KnzVZKJSzAFVcW3_v2NfNRe312MQJwdpftwUKFp0TUw" alt="Panel Discussion on AI">
+                                <div>
+                                    <h4>Design Literacy</h4>
+                                    <p>4:00 PM -  6:00 PM</p>
+                                </div>
+                            </div>
+                            </div>
+                            <button class="carousel-button left" onclick="moveCarousel('carousel-conference', 'left')">&#10094;</button>
+                            <button class="carousel-button right" onclick="moveCarousel('carousel-conference', 'right')">&#10095;</button>
+                        </div>
+                    </div>
+        
+                    <!-- Event Hall Section -->
+                    <div class="event-section" style="background: linear-gradient(145deg, #FF69B4, #FF1493);">
+                        <h3>🎪 Event Hall</h3>
+                        <div class="carousel" id="carousel-event">
+                            <div class="carousel-container">
+                                <div class="carousel-item">
+                                    <img src="https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg" alt="Magic Show">
+                                    <div>
+                                        <h4>Project Exhibition</h4>
+                                        <p>11:20 AM - 12:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://i.ibb.co/9nn7CNt/flash.png" alt="Stand-Up Comedy">
+                                    <div>
+                                        <h4>Flash Talk</h4>
+                                        <p>2:00 PM - 3:20PM</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg" alt="Magic Show">
+                                    <div>
+                                        <h4>Project Exhibition</h4>
+                                        <p>3:20 PM - 4:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="https://i.ibb.co/9nn7CNt/flash.png" alt="Stand-Up Comedy">
+                                  <div>
+                                      <h4>Flash Talk</h4>
+                                      <p>4:00 PM - 5:20PM</p>
+                                  </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Keynote Address">
+                                <div>
+                                    <h4>Networking Activity</h4>
+                                    <p>5:20 PM - 6:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="https://media.licdn.com/dms/image/v2/D5622AQEnWeGJ3MuwIQ/feedshare-shrink_800/feedshare-shrink_800/0/1733761893569?e=2147483647&v=beta&t=COiPd68nV9meqPE1lIAk_wYladBfWZRkH2aDj1lpqaQ" alt="Keynote Address">
+                              <div>
+                                  <h4>Saas Tech Stand-Up </h4>
+                                  <p>6:00 PM - 8:00 PM</p>
+                              </div>
+                          </div>
+                            </div>
+                            <button class="carousel-button left" onclick="moveCarousel('carousel-event', 'left')">&#10094;</button>
+                            <button class="carousel-button right" onclick="moveCarousel('carousel-event', 'right')">&#10095;</button>
+                        </div>
+                    </div>
+
+                                <!-- Lobby -->
+            <div class="event-section" style="background: linear-gradient(145deg, #8A4FFF, #5F27CD);">
+              <h3>🎮 Lobby</h3>
+              <div class="carousel" id="carousel-gaming">
+                  <div class="carousel-container">
+                      <div class="carousel-item">
+                          <img src="https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/" alt="eSports Tournament">
+                          <div>
+                              <h4>Empathy Walk</h4>
+                              <p>10:00 PM - 12:00 PM</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="VR Gaming Experience">
+                          <div>
+                              <h4>Networking Activity</h4>
+                              <p>2:00 PM - 4:00 PM</p>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="carousel-button left" onclick="moveCarousel('carousel-gaming', 'left')">&#10094;</button>
+                  <button class="carousel-button right" onclick="moveCarousel('carousel-gaming', 'right')">&#10095;</button>
+              </div>
+          </div>
+
+          <!-- Meeting Room -->
+          <div class="event-section" style="background: linear-gradient(145deg, #FF6B35, #F7B32D);">
+              <h3> 🎡  Meeting Room</h3>
+              <div class="carousel" id="carousel-food">
+                  <div class="carousel-container">
+                      <div class="carousel-item">
+                          <img src="https://img.freepik.com/free-vector/cartoon-gamer-room-illustration_23-2148916747.jpg" alt="Cooking Masterclass">
+                          <div>
+                              <h4>Game Rooms</h4>
+                              <p>10:00 AM - 12:00 PM</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZxhqwUj0ZR-XEw0D9sSRj2-Jb-siZb_VrkQ&s" alt="Global Food Tasting">
+                          <div>
+                              <h4>Game Room</h4>
+                              <p>2:00 PM - 4:00 PM</p>
+                          </div>
+                      </div>
+
+                      <div class="carousel-item">
+                        <img src="https://bloximages.newyork1.vip.townnews.com/appeal-democrat.com/content/tncms/assets/v3/editorial/6/74/674fceba-db22-11ed-b4e4-fb89fe525939/6439ec40ac95d.image.jpg?resize=1200%2C900" alt="Global Food Tasting">
+                        <div>
+                            <h4>VR Room</h4>
+                            <p>4:00 PM - 6:00 PM</p>
+                        </div>
+                    </div>
+                  </div>
+                  <button class="carousel-button left" onclick="moveCarousel('carousel-food', 'left')">&#10094;</button>
+                  <button class="carousel-button right" onclick="moveCarousel('carousel-food', 'right')">&#10095;</button>
+              </div>
+          </div>
+                </div>
+            </div>
+        
+            <script>
+                function moveCarousel(carouselId, direction) {
+                    const carousel = document.getElementById(carouselId);
+                    const carouselContainer = carousel.querySelector('.carousel-container');
+                    const items = carouselContainer.querySelectorAll('.carousel-item');
+                    let currentIndex = parseInt(carousel.dataset.index) || 0;
+        
+                    if (direction === 'left') {
+                        currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
+                    } else {
+                        currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+                    }
+        
+                    carousel.dataset.index = currentIndex;
+                    const offset = -currentIndex * (items[0].offsetWidth + 20);
+                    carouselContainer.style.transform = `translateX(${offset}px)`;
+                }
+            </script>
+        </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section style="font-family: 'Arial', sans-serif; background: #ece691; margin: 0; padding: 0;">
+  <!-- Header -->
+  <header style="background: linear-gradient(45deg, #6bf0ff, #53d4ff); color: white; text-align: center; padding: 20px;">
+      <h1 style="margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);"></h1>
+      <h2 class="carnival-title">Carnival Games Challenge</h2>
+      <div style="margin: 15px 0; font-size: 1.2em;">
+          Total Score: <span id="total-score">0</span>
+      </div>
+  </header>
+
+  <!-- Games Container -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 60px;">
+      <!-- Tic Tac Toe -->
+      <div style="background: #efebaf; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px;">
+          <h2 style="color: #ee0606; text-align: center; margin-bottom: 10px;">Tic Tac Toe vs Computer</h2>
+          <p style="text-align: center; color: #666;">Win: +50 points | Lose: -10 points</p>
+          <div id="game-status" style="text-align: center; margin: 10px 0; min-height: 20px; color: #3b85d4; font-weight: bold;"></div>
+          <div id="tictactoe" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 15px;">
+          </div>
+          <button onclick="resetTicTacToe()" style="width: 100%; background-color: #3b85d4; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+              New Game
+          </button>
+      </div>
+
+      <!-- Name Guessing Game -->
+      <div style="background-color: #efebaf; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px;">
+          <h2 style="color:#ee0606; text-align: center; margin-bottom: 10px;">Name Guessing Game</h2>
+          <p style="text-align: center; color: #666;">Correct: +30 points | Wrong: -5 points</p>
+          <div id="name-hints" style="text-align: center; margin: 15px 0; min-height: 60px; color: #666;"></div>
+          <div id="name-feedback" style="text-align: center; margin: 10px 0; min-height: 20px; font-weight: bold;"></div>
+          <input type="text" id="name-guess" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;" placeholder="Enter your guess">
+          <button onclick="checkName()" style=" width: 100%; background-color: #3b85d4; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; margin-bottom: 10px;">
+              Submit Guess
+          </button>
+          <button onclick="getHint()" style="width: 100%; background-color: #ee0606; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+              Get Hint (-2 points)
+          </button>
+      </div>
+  </div>
+
+  <script>
+      let totalScore = 0;
+      
+      // Tic Tac Toe Implementation
+      let gameBoard = ['', '', '', '', '', '', '', '', ''];
+      let gameActive = true;
+      const winPatterns = [
+          [0, 1, 2], [3, 4, 5], [6, 7, 8],
+          [0, 3, 6], [1, 4, 7], [2, 5, 8],
+          [0, 4, 8], [2, 4, 6]
+      ];
+
+      function createTicTacToe() {
+          const board = document.getElementById('tictactoe');
+          board.innerHTML = '';
+          for (let i = 0; i < 9; i++) {
+              const cell = document.createElement('div');
+              cell.style.backgroundColor = '#f0f0f0';
+              cell.style.aspectRatio = '1';
+              cell.style.display = 'flex';
+              cell.style.alignItems = 'center';
+              cell.style.justifyContent = 'center';
+              cell.style.fontSize = '2em';
+              cell.style.cursor = 'pointer';
+              cell.onclick = () => makeMove(i);
+              board.appendChild(cell);
+          }
+          updateBoard();
+      }
+
+      function makeMove(index) {
+          if (gameBoard[index] === '' && gameActive) {
+              gameBoard[index] = 'X';
+              updateBoard();
+              
+              if (checkWinner('X')) {
+                  document.getElementById('game-status').textContent = 'You Won! 🎉';
+                  document.getElementById('game-status').style.color = '#4ECDC4';
+                  updateScore(50);
+                  gameActive = false;
+                  return;
+              }
+              
+              if (gameBoard.includes('')) {
+                  setTimeout(computerMove, 500);
+              } else {
+                  document.getElementById('game-status').textContent = "It's a Draw!";
+                  gameActive = false;
+              }
+          }
+      }
+
+      function computerMove() {
+          // Try to win
+          for (let i = 0; i < 9; i++) {
+              if (gameBoard[i] === '') {
+                  gameBoard[i] = 'O';
+                  if (checkWinner('O')) {
+                      updateBoard();
+                      document.getElementById('game-status').textContent = 'Computer Wins!';
+                      document.getElementById('game-status').style.color = '#FF6B6B';
+                      updateScore(-10);
+                      gameActive = false;
+                      return;
+                  }
+                  gameBoard[i] = '';
+              }
+          }
+
+          // Try to block player
+          for (let i = 0; i < 9; i++) {
+              if (gameBoard[i] === '') {
+                  gameBoard[i] = 'X';
+                  if (checkWinner('X')) {
+                      gameBoard[i] = 'O';
+                      updateBoard();
+                      return;
+                  }
+                  gameBoard[i] = '';
+              }
+          }
+
+          // Take center if available
+          if (gameBoard[4] === '') {
+              gameBoard[4] = 'O';
+              updateBoard();
+              return;
+          }
+
+          // Take random available spot
+          let emptyCells = gameBoard.reduce((acc, cell, idx) => 
+              cell === '' ? [...acc, idx] : acc, []);
+          let randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+          gameBoard[randomCell] = 'O';
+          updateBoard();
+      }
+
+      function checkWinner(player) {
+          return winPatterns.some(pattern => 
+              pattern.every(index => gameBoard[index] === player)
+          );
+      }
+
+      function updateBoard() {
+          const cells = document.getElementById('tictactoe').children;
+          for (let i = 0; i < cells.length; i++) {
+              cells[i].textContent = gameBoard[i];
+              if (gameBoard[i] === 'X') {
+                  cells[i].style.color = '#4ECDC4';
+              } else if (gameBoard[i] === 'O') {
+                  cells[i].style.color = '#FF6B6B';
+              }
+          }
+      }
+
+      function resetTicTacToe() {
+          gameBoard = ['', '', '', '', '', '', '', '', ''];
+          gameActive = true;
+          document.getElementById('game-status').textContent = '';
+          createTicTacToe();
+      }
+
+      // Name Guessing Game Implementation
+      const names = [
+    { name: 'ALBERT EINSTEIN', hints: ['Famous physicist', 'Developed theory of relativity', 'E = mc²', 'German-born scientist', 'Nobel laureate in Physics'] },
+    { name: 'WILLIAM SHAKESPEARE', hints: ['Famous playwright', 'Wrote Romeo and Juliet', 'The Bard', 'From Stratford-upon-Avon', 'Author of 39 plays'] },
+    { name: 'LUDWIG VAN BEETHOVEN', hints: ['Classical composer', 'Became deaf', 'Wrote Ninth Symphony', 'German composer', 'Bridge between Classical and Romantic eras'] },
+    { name: 'MARTIN LUTHER KING JR.', hints: ['Civil rights leader', 'Famous for his “I Have a Dream” speech', 'Advocated for nonviolent protest', 'Awarded the Nobel Peace Prize'] },
+    { name: 'ISAAC NEWTON', hints: ['Mathematician and physicist', 'Formulated the laws of motion', 'Invented calculus', 'Author of Principia Mathematica'] },
+    { name: 'CHARLES DARWIN', hints: ['Naturalist', 'Developed the theory of evolution', 'Wrote On the Origin of Species', 'Studied finches in the Galapagos'] },
+    { name: 'MARIE CURIE', hints: ['Physicist and chemist', 'Pioneered research on radioactivity', 'First woman to win a Nobel Prize', 'Conducted research on radium and polonium'] },
+    { name: 'FLORENCE NIGHTINGALE', hints: ['Founder of modern nursing', 'Pioneered nursing education', 'Improved sanitation in hospitals', 'Known as the Lady with the Lamp'] },
+    { name: 'WALTER DISNEY', hints: ['Animator and film producer', 'Founder of The Walt Disney Company', 'Created Mickey Mouse', 'Revolutionized animated films'] },
+    { name: 'PABLO PICASSO', hints: ['Spanish painter', 'Co-founder of Cubism', 'Created the painting Guernica', 'One of the most influential artists of the 20th century'] },
+    { name: 'LEONARDO DA VINCI', hints: ['Renaissance polymath', 'Artist of Mona Lisa and The Last Supper', 'Inventor, engineer, and architect', 'Known for his notebooks filled with sketches'] },
+    { name: 'GALILEO GALILEI', hints: ['Italian astronomer', 'Made significant improvements to the telescope', 'Father of modern science', 'Supported the heliocentric model of the solar system'] }
+];
+      
+      let currentName = null;
+      let currentHints = [];
+      let hintIndex = 0;
+
+      function startNameGame() {
+          const randomIndex = Math.floor(Math.random() * names.length);
+          currentName = names[randomIndex];
+          currentHints = [...currentName.hints];
+          hintIndex = 0;
+          document.getElementById('name-hints').innerHTML = 'Start guessing! Use the hint button if needed.';
+          document.getElementById('name-feedback').textContent = '';
+          document.getElementById('name-guess').value = '';
+      }
+
+      function getHint() {
+          if (hintIndex < currentHints.length) {
+              const hintsDiv = document.getElementById('name-hints');
+              hintsDiv.innerHTML += `<p>Hint ${hintIndex + 1}: ${currentHints[hintIndex]}</p>`;
+              hintIndex++;
+              updateScore(-2);
+          }
+      }
+
+      function checkName() {
+          const guess = document.getElementById('name-guess').value.toUpperCase();
+          const feedback = document.getElementById('name-feedback');
+          
+          if (guess === currentName.name) {
+              feedback.textContent = '🎉 You Won! Correct answer!';
+              feedback.style.color = '#4ECDC4';
+              updateScore(30);
+              setTimeout(startNameGame, 2000);
+          } else {
+              feedback.textContent = '❌ Wrong answer. Try again!';
+              feedback.style.color = '#FF6B6B';
+              updateScore(-5);
+          }
+      }
+
+      function updateScore(points) {
+          totalScore += points;
+          document.getElementById('total-score').textContent = totalScore;
+      }
+
+      // Initialize games
+      createTicTacToe();
+      startNameGame();
+  </script>
+</section>
+
+
+
+
+<!-- Event Area Section -->
+<div class="event_area" style="background-color: #ece691; padding: 0px; border-radius: 20px;">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+    <!-- Header Section -->
+    <div class="double_line">
+      <div class="row" style="background-color: rgba(39, 99, 39, 0.73); border-radius: 15px; padding: 30px;">
+        <h1 class="vr_text d-lg-block" style="color: #fff; font-size: 2.5rem; letter-spacing: 5px; text-align: center; margin-bottom: 30px;">WORKSHOPS</h1>
+
+        <!-- Date Section -->
+        <div class="col-xl-3 col-lg-3" style="text-align: center;">
+          <div class="date" style="color: #fff; font-size: 1.8rem; font-weight: bold;">15 Dec 2024</div>
+        </div>
+
+        <!-- Day Information -->
+        <div class="col-xl-9 col-lg-9" style="color: #fff;">
+         
+          <!-- Workshop Sessions -->
+         
+    <section style="font-family: 'Inter', system-ui, -apple-system, sans-serif;  margin: 0; padding: 40px 20px; min-height: 100vh; animation: backgroundShift 20s ease infinite;">
+      
+  
+      <section style="max-width: 1200px; margin: 0 auto; padding: 30px; border: none; border-radius: 20px; background: #ece691; backdrop-filter: blur(10px); position: relative; overflow: hidden;">
+          
+          <!-- Decorative carnival elements -->
+          <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: linear-gradient(45deg, #FFD700, #FFA500); border-radius: 50%; opacity: 0.5; animation: float 3s ease-in-out infinite;"></div>
+          <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; background: linear-gradient(45deg, #FF69B4, #FF1493); border-radius: 50%; opacity: 0.5; animation: float 4s ease-in-out infinite;"></div>
+  
+          <h2 style="color:  #0181F5; text-align: center; margin-bottom: 30px; font-size: 2.5rem; font-weight: 800; position: relative; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); animation: bounce 2s ease-in-out infinite; ">
+             DAY 02
+          </h2>
+          
+          <div style="display: grid; gap: 25px;">
+              <!-- MakerSpace Section -->
+              <div style="background: linear-gradient(145deg, #FF6B6B, #FFE66D); padding: 20px; border-radius: 15px; position: relative; overflow: hidden;">
+                  <h3 style="color: #fff; margin: 0 0 15px 0; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); display: flex; align-items: center;">
+                      🎨 MakerSpace
+                  </h3>
+                  <div class="carousel" id="carousel-akespace">
+                      <div class="carousel-container">
+                          <div class="carousel-item">
+                              <img src="https://i.ibb.co/9nn7CNt/flash.png" alt="Robotics Workshop">
+                              <div>
+                                  <h4>Flash Talk</h4>
+                                  <p>10:00 AM - 11:10 AM</p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Robotics Workshop">
+                            <div>
+                                <h4>Networking Activity</h4>
+                                <p>11:20 AM - 12:00 PM</p>
+                            </div>
+                        </div>
+                          <div class="carousel-item">
+                              <img src="https://i.ibb.co/ZW2dykt/story-of-ai.png" alt="3D Printing Demo">
+                              <div>
+                                  <h4>GenAI Workshop</h4>
+                                  <p>2:00 PM - 4:00 PM</p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://media.licdn.com/dms/image/D4D12AQFiOV5OmWAf6Q/article-cover_image-shrink_720_1280/0/1707192384162?e=2147483647&v=beta&t=d8zQyoJpWqXbo7yQ-0kWjPVYZSXVw71J3e9Tt_TvoE4" alt="3D Printing Demo">
+                            <div>
+                                <h4>Robotics Workshop</h4>
+                                <p>2:00 PM - 4:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://i.ibb.co/9nn7CNt/flash.png" alt="Robotics Workshop">
+                          <div>
+                              <h4>Flash Talk</h4>
+                              <p>4:00 AM - 5:10 AM</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Robotics Workshop">
+                        <div>
+                            <h4>Networking Activity</h4>
+                            <p>5:10 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+
+                      </div>
+                      <button class="carousel-button left" onclick="moveCarousel('carousel-akespace', 'left')">&#10094;</button>
+                      <button class="carousel-button right" onclick="moveCarousel('carousel-akespace', 'right')">&#10095;</button>
+                  </div>
+              </div>
+  
+              <!-- Conference Hall Section -->
+              <div style="background: linear-gradient(145deg, #4ECDC4, #45B7D1); padding: 20px; border-radius: 15px; position: relative; overflow: hidden;">
+                  <h3 style="color: #fff; margin: 0 0 15px 0; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); display: flex; align-items: center;">
+                      🎭 Conference Hall
+                  </h3>
+                  <div class="carousel" id="carousel-onference">
+                      <div class="carousel-container">
+                          <div class="carousel-item">
+                              <img src="https://i.ibb.co/bHQ4zhM/money-matter.png" alt="Keynote Address">
+                              <div>
+                                  <h4>Money Matters</h4>
+                                  <p>10:00 AM - 12:00 PM</p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPNQBk4d5HZzvMD9RcSTbC-kmKALzrprqkI0LQABQ2e0z7HkdFFi8PKvbvml9bLL3QTts&usqp=CAU" alt="Panel Discussion on AI">
+                              <div>
+                                  <h4>Understanding Bias</h4>
+                                  <p>2:00 PM - 4:00 PM</p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://i.ibb.co/nc2tPq1/resin.png" alt="Panel Discussion on AI">
+                            <div>
+                                <h4>Resin Workshop</h4>
+                                <p>4:00 PM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1733815523541242910TV%20-%209.png" alt="Panel Discussion on AI">
+                          <div>
+                              <h4>TinkerHub Story</h4>
+                              <p>6:00 PM - 8:00 PM</p>
+                          </div>
+                      </div>
+                      </div>
+                      <button class="carousel-button left" onclick="moveCarousel('carousel-onference', 'left')">&#10094;</button>
+                      <button class="carousel-button right" onclick="moveCarousel('carousel-onference', 'right')">&#10095;</button>
+                  </div>
+              </div>
+  
+              <!-- Event Hall Section -->
+              <div style="background: linear-gradient(145deg, #FF69B4, #FF1493); padding: 20px; border-radius: 15px; position: relative; overflow: hidden;">
+                  <h3 style="color: #fff; margin: 0 0 15px 0; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); display: flex; align-items: center;">
+                      🎪 Event Hall
+                  </h3>
+                  <div class="carousel" id="carousel-even">
+                      <div class="carousel-container">
+                          <div class="carousel-item">
+                              <img src="https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg" alt="Magic Show">
+                              <div>
+                                  <h4>Project Exhibition</h4>
+                                  <p>10:00 AM - 3:20 PM </p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                              <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Stand-Up Comedy">
+                              <div>
+                                  <h4>Networking Activity</h4>
+                                  <p>3:20 PM - 4:00 PM</p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ1SrdhrJ_-tsrJJsdxMEE782Y6LtqN5VuRA&s" alt="Stand-Up Comedy">
+                            <div>
+                                <h4>Shasn Game Night</h4>
+                                <p>4:00 PM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://i.ibb.co/G2LG5ZR/open-mic.png" alt="Stand-Up Comedy">
+                          <div>
+                              <h4>Open Mic - TinkerSpace’s Family </h4>
+                              <p>6:00 PM - 8:00 PM</p>
+                          </div>
+                      </div>
+                      </div>
+                      <button class="carousel-button left" onclick="moveCarousel('carousel-even', 'left')">&#10094;</button>
+                      <button class="carousel-button right" onclick="moveCarousel('carousel-even', 'right')">&#10095;</button>
+                  </div>
+              </div>
+                                  <!-- Lobby -->
+            <div class="event-section" style="background: linear-gradient(145deg, #8A4FFF, #5F27CD);">
+              <h3>🎮 Lobby</h3>
+              <div class="carousel" id="carousel-gamin">
+                  <div class="carousel-container">
+                      <div class="carousel-item">
+                          <img src="https://media.istockphoto.com/id/182176314/photo/blond-girl-getting-a-butterfly-painted-on-her-face.jpg?s=612x612&w=0&k=20&c=sbxC8dVz-i1CqnBln4Yd9kKuyKYlKoS5U5jVlKocrGk=" alt="eSports Tournament">
+                          <div>
+                              <h4>Face Painting</h4>
+                              <p>10:00 PM - 12:00 PM</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img src="https://m.media-amazon.com/images/I/81zgt6BbEIL.jpg" alt="VR Gaming Experience">
+                          <div>
+                              <h4>Pot Painting</h4>
+                              <p>2:00 PM - 4:00 PM</p>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="carousel-button left" onclick="moveCarousel('carousel-gamin', 'left')">&#10094;</button>
+                  <button class="carousel-button right" onclick="moveCarousel('carousel-gamin', 'right')">&#10095;</button>
+              </div>
+          </div>
+
+          <!-- Meeting Room -->
+          <div class="event-section" style="background: linear-gradient(145deg, #FF6B35, #F7B32D);">
+              <h3> 🎡  Meeting Room</h3>
+              <div class="carousel" id="carousel-foo">
+                  <div class="carousel-container">
+                      <div class="carousel-item">
+                          <img src="https://img.freepik.com/premium-vector/flat-gamer-room-illustration_23-2148919465.jpg" alt="Cooking Masterclass">
+                          <div>
+                              <h4>Game Room</h4>
+                              <p>10:00 AM - 12:00 PM</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZxhqwUj0ZR-XEw0D9sSRj2-Jb-siZb_VrkQ&s" alt="Global Food Tasting">
+                          <div>
+                              <h4>Game Room</h4>
+                              <p>2:00 PM - 4:00 PM</p>
+                          </div>
+                      </div>
+
+                      <div class="carousel-item">
+                        <img src="https://img.freepik.com/free-vector/cartoon-gamer-room-illustration_23-2148916747.jpg" alt="Global Food Tasting">
+                        <div>
+                            <h4>Game Room</h4>
+                            <p>4:00 PM - 6:00 PM</p>
+                        </div>
+                    </div>
+                  </div>
+                  <button class="carousel-button left" onclick="moveCarousel('carousel-foo', 'left')">&#10094;</button>
+                  <button class="carousel-button right" onclick="moveCarousel('carousel-foo', 'right')">&#10095;</button>
+              </div>
+          </div>
+          </div>
+      </section>
+  
+      <script>
+          function moveCarousel(carouselId, direction) {
+              const carousel = document.getElementById(carouselId);
+              const carouselContainer = carousel.querySelector('.carousel-container');
+              const items = carouselContainer.querySelectorAll('.carousel-item');
+              let currentIndex = parseInt(carousel.dataset.index) || 0;
+  
+              if (direction === 'left') {
+                  currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
+              } else {
+                  currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+              }
+  
+              carousel.dataset.index = currentIndex;
+              const offset = -currentIndex * (items[0].offsetWidth + 20);
+              carouselContainer.style.transform = `translateX(${offset}px)`;
+          }
+      </script>
+      <style>
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+        }
+
+        .carousel-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .carousel-item div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .carousel-item h4 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .carousel-item p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            opacity: 1;
+        }
+
+        .carousel-button.left {
+            left: 0;
+        }
+
+        .carousel-button.right {
+            right: 0;
+        }
+
+        #carousel-makespace { background: linear-gradient(145deg, #FF6B6B, #FFE66D); }
+        #carousel-conference { background: linear-gradient(145deg, #4ECDC4, #45B7D1); }
+   
+  </style>
+
+  </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+     
+  
+
+    <footer style="background-color: #0181F5; color: white; padding: 60px 0 40px; font-family: 'Inter', system-ui, -apple-system, sans-serif; position: relative; margin-top: 30px;">
+      <!-- Decorative Circle -->
+      <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);">
+        <div style="background-color: #ffc700; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+        </div>
+      </div>
+    
+      <div style="max-width: 1200px; margin: auto; padding: 0 20px;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
+          <!-- Follow Us Section -->
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #ffc700; font-size: 1.5rem; margin-bottom: 20px; font-weight: 600;">Follow Us</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 12px;">
+                <a style="color: white; text-decoration: none; transition: all 0.3s; display: inline-block; padding: 4px 0; position: relative;" 
+                   onmouseover="this.style.color='#ffc700'; this.style.transform='translateX(10px)'" 
+                   onmouseout="this.style.color='white'; this.style.transform='translateX(0)'"
+                   href="https://in.linkedin.com/showcase/tinkerspacekochi/" 
+                   target="_blank">LinkedIn</a>
+              </li>
+              <li style="margin-bottom: 12px;">
+                <a style="color: white; text-decoration: none; transition: all 0.3s; display: inline-block; padding: 4px 0;" 
+                   onmouseover="this.style.color='#ffc700'; this.style.transform='translateX(10px)'" 
+                   onmouseout="this.style.color='white'; this.style.transform='translateX(0)'"
+                   href="https://www.instagram.com/tinkerspace.kochi/?hl=en" 
+                   target="_blank">Instagram</a>
+              </li>
+              <li>
+                <a style="color: white; text-decoration: none; transition: all 0.3s; display: inline-block; padding: 4px 0;" 
+                   onmouseover="this.style.color='#ffc700'; this.style.transform='translateX(10px)'" 
+                   onmouseout="this.style.color='white'; this.style.transform='translateX(0)'"
+                   href="https://www.youtube.com/@TinkerHubFoundation" 
+                   target="_blank">YouTube</a>
+              </li>
+            </ul>
+          </div>
+    
+          <!-- Links Section -->
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #ffc700; font-size: 1.5rem; margin-bottom: 20px; font-weight: 600;">Links</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li>
+                <a style="color: white; text-decoration: none; transition: all 0.3s; display: inline-block; padding: 4px 0;" 
+                   onmouseover="this.style.color='#ffc700'; this.style.transform='translateX(10px)'" 
+                   onmouseout="this.style.color='white'; this.style.transform='translateX(0)'"
+                   href="https://www.instagram.com/tinkerspace.kochi/?hl=en" 
+                   target="_blank">Contact</a>
+              </li>
+            </ul>
+          </div>
+    
+          <!-- Venue Section -->
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #ffc700; font-size: 1.5rem; margin-bottom: 20px; font-weight: 600;">Venue</h3>
+            <p style="margin: 0; color : white; line-height: 1.6;">
+              Tinkerspace, CUSAT, Kochi<br />
+              <a style="color: white; text-decoration: none; transition: color 0.3s;" 
+                 onmouseover="this.style.color='#ffc700'" 
+                 onmouseout="this.style.color='white'"
+                 href="mailto:tinkerspace@contact.com">tinkerspace@contact.com</a><br />
+              <a style="color: white; text-decoration: none; transition: color 0.3s;" 
+                 onmouseover="this.style.color='#ffc700'" 
+                 onmouseout="this.style.color='white'"
+                 href="tel:+918875136666">+91 8875136666</a>
+            </p>
+          </div>
+        </div>
+    
+        <!-- Footer Border -->
+        <div style="border-top: 1px solid rgba(255, 199, 0, 0.3); margin: 30px 0;"></div>
+    
+        <!-- Copyright Section -->
+        <div style="text-align: center;">
+          <p style=" color: #ffc700 ; margin: 0; font-size: 0.9rem;">
+            Copyright © <span id="year"></span> All rights reserved | made by 
+            <a href="https://www.linkedin.com/in/ebin-sebastian433" 
+               target="_blank" 
+               style="color: #ffc700; text-decoration: none; transition: opacity 0.3s;" 
+               onmouseover="this.style.opacity='0.8'" 
+               onmouseout="this.style.opacity='1'">ebin</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- JS here -->
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>

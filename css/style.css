@@ -1,0 +1,1923 @@
+
+.flex-center-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+
+
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
+/* 1. Theme default css */
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
+/* line 6, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+body {
+  margin-top: 40px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  overflow:auto;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../fonts/lovecraft.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 15, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.img {
+  max-width: 100%;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 19, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+a,
+.button {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 23, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+a:focus,
+.button:focus, button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 28, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 32, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+a:focus,
+a:hover,
+.portfolio-cat a:hover,
+.footer -menu li a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+/* line 39, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+a,
+button {
+  color: #131313;
+  outline: medium none;
+}
+
+/* line 44, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+h1, h2, h3, h4, h5 {
+  font-family: 'Clash Display', sans-serif;
+  color: #131313;
+}
+
+/* line 48, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+/* line 57, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 61, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+li {
+  list-style: none;
+}
+
+/* line 64, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+p{
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 26px;
+  color: #ff1010;
+  margin-bottom: 13px;
+  font-family: 'Clash Display', sans-serif;
+}
+
+
+/* line 79, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+*::-moz-selection {
+  background: #444;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 84, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+::-moz-selection {
+  background: #444;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 89, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+::selection {
+  background: #444;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 94, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+*::-webkit-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 99, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+*:-ms-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 104, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+*::-ms-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 109, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+*::placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 115, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+h3 {
+  font-size: 24px;
+}
+
+/* line 119, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.mb-65 {
+  margin-bottom: 67px;
+}
+
+
+
+/* line 146, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.overlay {
+  position: relative;
+  z-index: 0;
+}
+
+/* line 150, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.overlay::before {
+  position: absolute;
+  content: "";
+  background-color: #020c26;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.851;
+}
+
+/* line 162, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.overlay2 {
+  position: relative;
+  z-index: 0;
+}
+
+/* line 166, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.overlay2::before {
+  position: absolute;
+  content: "";
+  background-color: #131313;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+/* line 178, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* line 182, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.pt-120 {
+  padding-top: 120px;
+}
+
+
+@media (max-width: 767px) {
+  /* line 244, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+  .seperator {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 244, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+  .seperator {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+/* line 262, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.mb-95 {
+  margin-bottom: 95px;
+}
+
+@media (max-width: 767px) {
+  /* line 262, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+  .mb-95 {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 269, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 767px) {
+  /* line 269, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+  .mb-80 {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 275, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+@media (max-width: 767px) {
+  /* line 275, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+  .mb-60 {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 281, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+
+/* line 20, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+.boxed-btn:focus {
+  outline: none;
+}
+
+/* line 23, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+.boxed-btn.large-width {
+  width: 220px;
+}
+
+
+
+
+/* line 73, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+.boxed-btn-white {
+  background-color: #ffe176;  /* Yellow background color */
+  color: #131313 !important;  /* Dark text color for better contrast */
+  display: flex;
+  justify-content: center;
+  padding: 16px 43px;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1rem;
+  font-weight:bolder;
+  border: 2px solid #ec612a;  /* Orange border */
+  text-transform: capitalize;
+  border-radius: 30px;
+  width: 40%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Adding shadow with proper values for better depth */
+  cursor: pointer;  /* Adding pointer cursor for better UX */
+  transition: all 0.3s ease;  /* Smooth transition for hover effects */
+  letter-spacing: 0.3cap;
+}
+
+/* Add hover effect */
+.boxed-btn-white:hover {
+  background-color: #ec612a;  /* Change background to orange on hover */
+  color: #fff;  /* Change text color to white on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);  /* Increase shadow on hover */
+  transform: translateY(-2px);  /* Slightly lift the button on hover */
+}
+
+/* Add focus effect for accessibility */
+.boxed-btn-white:focus {
+  outline: none;  /* Remove default focus outline */
+  border-color: #ec612a;  /* Highlight border color on focus */
+}
+
+.boxed-btn-white.about{
+  width: 70%;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+@media (min-width: 1200px) {
+  /* line 73, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+  .boxed-btn-white {
+    padding: 14px 20px;
+    font-size: 22px;
+    text-align: center;
+    width: 50%;
+  }
+}
+
+
+@media (max-width: 767px) {
+  /* line 73, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+  .boxed-btn-white {
+    padding: 14px 20px;
+    font-size: 18px;
+    text-align: center;
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  /* line 73, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+  .boxed-btn-white {
+    padding: 14px 20px;
+    font-size: 16px;
+    text-align: center;
+    width: 80%;
+  }
+}
+@media (max-width: 400px) {
+  /* line 73, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+  .boxed-btn-white {
+    padding: 8px 10px;
+    font-size: 14px;
+    text-align: center;
+    width: 80%;
+  }
+}
+
+/* line 91, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+.boxed-btn-white:hover {
+  background: #ffd53e;
+  color: #000 !important;
+  border: 2px solid #ec612a;
+}
+
+/* line 96, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+.boxed-btn-white:focus {
+  outline: none;
+}
+
+/* line 99, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
+.boxed-btn-white.large-width {
+  width: 220px;
+}
+
+/* line 2, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+.section_title .sub_heading {
+  color: #3950ff;
+  display: block;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "CustomFont", sans-serif;
+  margin-bottom: 22px;
+}
+.section_title p{
+  background-color: #02c856;
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 2, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .section_title .sub_heading {
+    margin-bottom: 10px;
+  }
+}
+
+/* line 15, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+.section_title .sub_heading2 {
+  color: #808080;
+  display: block;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: 'Clash Display', sans-serif;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 767px) {
+  /* line 15, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .section_title .sub_heading2 {
+    margin-bottom: 5px;
+  }
+}
+
+/* line 27, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+.section_title h3 {
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 58px;
+  margin-bottom: 0;
+  color: #ec612a;
+}
+
+@media (max-width: 767px) {
+  /* line 27, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .section_title h3 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 27, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .section_title h3 {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 0;
+  }
+}
+
+/* line 43, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+.section_title.padding-right {
+  padding-right: 76px;
+}
+
+@media (max-width: 767px) {
+  /* line 43, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .section_title.padding-right {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 43, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .section_title.padding-right {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 43, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .section_title.padding-right {
+    padding-right: 0;
+  }
+}
+
+/* line 57, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+.serction_title_large h3 {
+  font-size: 80px;
+  font-weight: 700;
+  color: #1F1F1F;
+  display: inline-block;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  /* line 57, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .serction_title_large h3 {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 57, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .serction_title_large h3 {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 57, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .serction_title_large h3 {
+    font-size: 60px;
+  }
+}
+
+/* line 72, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+.serction_title_large h3::before {
+  position: absolute;
+  right: 0;
+  content: "";
+  width: 128px;
+  height: 4px;
+  background-image: url(../img/speakers/line.png);
+  top: 50%;
+  margin-bottom: 2px;
+  right: -158px;
+}
+
+@media (max-width: 767px) {
+  /* line 72, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
+  .serction_title_large h3::before {
+    width: 80px;
+    right: -100px;
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slick-nav.scss */
+  .mobile_menu {
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    z-index: 9;
+  }
+}
+
+
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+body {
+  background-color: #ece691;
+  height: auto;
+  width: auto;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+
+}
+
+.slider_area {
+  position: relative;
+}
+
+.clouds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+}
+
+.cloud {
+  position: absolute;
+  height: auto;
+  
+  opacity: 1; 
+  animation: drift 100s linear infinite; 
+}
+
+
+@keyframes drift {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+
+
+/* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area {
+  background-size: cover;
+  background-position: center  center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: auto;
+}
+
+#countdown {
+  font-size: 80px;
+  font-family: 'Clash Display', sans-serif;
+  color: #131313;
+  
+}
+
+#timer {
+  font-weight: bold;
+}
+
+.timer-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 80px; /* Fixed width for each time unit */
+  
+}
+
+.time-label {
+  font-size: 18px;
+  color: #131313;
+}
+@media (min-width: 200px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  #countdown {
+    font-size: 30px;
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 500px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  #countdown {
+    font-size: 40px;
+    max-width: 80%;
+  }
+}
+@media (min-width: 700px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  #countdown {
+    font-size: 50px;
+    max-width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  #countdown {
+    font-size: 60px;
+    max-width: 50%;
+  }
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .location {
+    flex-direction: column;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area {
+    padding-top: 140px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area {
+    padding-top: 140px;
+    padding-bottom: 30px;
+  }
+}
+
+/* line 18, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .position_relv {
+  position: relative;
+}
+
+/* line 22, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .title_text {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+.slider_area .title_text img{
+  max-width: 100%;   /* Ensures the image fits within its parent container */
+    height: auto;  
+    padding-bottom: 30px; 
+}
+
+
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 22, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 22, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 22, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 36, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .title_text.title_text2 {
+  margin-bottom: 60px;
+  padding: 55px 8px 25px 0px;
+}
+
+@media (max-width: 767px) {
+  /* line 36, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text.title_text2 {
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+/* line 43, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .title_text.title_text2::before {
+  display: none;
+}
+
+/* line 46, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .title_text.title_text2:after {
+  position: absolute;
+  background-image: url(../img/banner/path2.png);
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  left: -14.5%;
+  width: 120%;
+  height: 120%;
+  top: -7%;
+  opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+  /* line 46, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text.title_text2:after {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 46, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text.title_text2:after {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 46, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text.title_text2:after {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 46, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text.title_text2:after {
+    display: none;
+  }
+}
+
+
+@media (max-width: 767px) {
+  /* line 72, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text::before {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 72, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text::before {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 72, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text::before {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 72, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text::before {
+    display: none;
+  }
+}
+
+/* line 97, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .title_text h3 {
+  font-size: 90px;
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 100px;
+  color: #fff;
+  margin-bottom: 66px;
+}
+
+@media (max-width: 767px) {
+  /* line 97, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text h3 {
+    font-size: 36px;
+    line-height: 43px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 97, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text h3 {
+    font-size: 46px;
+    line-height: 55px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 97, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .title_text h3 {
+    font-size: 60px;
+    line-height: 70px;
+    margin-bottom: 20px;
+  }
+}
+.date{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* line 121, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .single_date {
+  color: #131313;
+  font-size: 25px;
+  font-weight:bold;
+}
+
+@media (max-width: 767px) {
+  /* line 121, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .single_date {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 400px) {
+  /* line 121, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .single_date {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+}
+
+/* line 128, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .single_date i {
+  padding-right: 10px;
+}
+
+/* line 135, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+/* .slider_area .countDOwn_area {
+  padding-top: 60px;
+} */
+
+/* line 138, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .countdown_time {
+  text-align: right;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 138, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .countdown_time {
+    margin-top: 40px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 138, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .countdown_time {
+    text-align: left;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 138, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .countdown_time {
+    text-align: center;
+  }
+}
+
+/* line 150, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .countdown_time .single_countdown {
+  display: inline-block;
+  text-align: right;
+  margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+  /* line 150, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .countdown_time .single_countdown {
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 150, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .countdown_time .single_countdown {
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+}
+
+/* line 162, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .countdown_time .single_countdown h3 {
+  color: #131313;
+  font-size: 46px;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  /* line 162, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .slider_area .countdown_time .single_countdown h3 {
+    font-size: 20px;
+  }
+}
+
+/* line 170, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.slider_area .countdown_time .single_countdown span {
+  font-size: 16px;
+  color: #131313;
+  text-transform: capitalize;
+}
+
+/* line 178, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+.opcity_text {
+  position: absolute;
+  right: 0;
+  writing-mode: vertical-lr;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  font-size: 120px;
+  top: -125px;
+  color: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  right: -87px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 178, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_slider.scss */
+  .opcity_text {
+    font-size: 90px;
+  }
+}
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area {
+  padding-top: 200px;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+/* line 5, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .shape-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* line 10, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .shape-2 {
+  position: absolute;
+  bottom: 15%;
+  right: 0;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 10, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+  .about_area .shape-2 {
+    bottom: 3%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+  .about_area {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+  .about_area {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+/* line 26, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_thumb {
+  position: relative;
+  z-index: 2;
+}
+
+/* line 29, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_thumb img {
+  width: 100%;
+  border-radius: 40px;
+}
+
+/* line 32, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_thumb .exprience {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 40px 45px;
+  background: #fff;
+  text-align: center;
+  left: 50%;
+}
+
+/* line 43, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_thumb .exprience h1 {
+  color: #131313;
+  font-weight: 700;
+  font-size: 80px;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 767px) {
+  /* line 43, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+  .about_area .about_thumb .exprience h1 {
+    font-size: 30px;
+  }
+}
+
+/* line 52, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_thumb .exprience span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #808080;
+}
+
+@media (max-width: 767px) {
+  /* line 61, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+  .about_area .about_info {
+    margin-top: 30px;
+  }
+}
+
+/* line 65, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_info .about_list {
+  margin-bottom: 50px;
+  margin-top: 34px;
+}
+
+/* line 68, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_info .about_list li {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #808080;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 767px) {
+  /* line 68, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+  .about_area .about_info .about_list li {
+    font-size: 14px;
+  }
+}
+
+/* line 79, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_info .about_list li::before {
+  content: "";
+  background: #02c856;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* line 93, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_info p {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #131313;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+  /* line 93, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+  .about_area .about_info p {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 300px) {
+  /* line 93, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+  .about_area .about_info p {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 105, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
+.about_area .about_info a {
+  text-align: center;
+}
+
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area {
+    padding-bottom: 20px;
+  }
+}
+
+/* line 8, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area.plus_padding {
+  margin-top: 200px;
+}
+
+@media (max-width: 767px) {
+  /* line 8, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area.plus_padding {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 8, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area.plus_padding {
+    margin-top: 60px;
+  }
+}
+
+/* line 17, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .vr_text {
+  font-size: 100px;
+  font-weight: 700;
+  color: #EA602B;;
+  writing-mode: vertical-lr;
+  position: absolute;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  font-family: 'CustomFont', sans-serif;
+}
+
+
+
+/* Ensure the marquee stays inside the row */
+.marquee {
+  width: 100%; /* Ensure it takes the full width of its parent container */
+  overflow: hidden; /* Hide anything that overflows the container */
+  white-space: nowrap; /* Prevent text from wrapping */
+  display: inline-block; /* Make it inline-block so it doesn't take up the whole row */
+}
+
+/* For animation effect */
+@keyframes marquee {
+  0% {
+      transform: translateY(100%); /* Start from the right */
+  }
+  100% {
+      transform: translateY(-100%); /* Move to the left */
+  }
+}
+
+/* Apply the marquee effect */
+.marquee {
+  animation: marquee 10s linear infinite;
+}
+
+/* Optional: You can also set a max-width for better control */
+.row {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 17, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area .vr_text {
+    left: 2%;
+  }
+}
+
+/* line 30, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .double_line {
+  position: relative;
+  z-index: 9;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  /* line 30, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area .double_line {
+    padding-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 40, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .double_line::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 10px;
+  top: 0;
+  left: 0;
+}
+
+/* line 49, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .double_line::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 60, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .date h3 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #429459;
+}
+
+@media (max-width: 767px) {
+  /* line 60, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area .date h3 {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 60, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area .date h3 {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 72, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .single_speaker {
+  margin-bottom: 63px;
+}
+
+@media (max-width: 767px) {
+  /* line 72, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area .single_speaker {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 77, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .single_speaker img {
+  float: left;
+}
+
+@media (max-width: 767px) {
+  /* line 77, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area .single_speaker img {
+    float: none;
+  }
+}
+
+/* line 83, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .single_speaker .speaker-name {
+  padding-left: 30px;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  /* line 83, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+  .event_area .single_speaker .speaker-name {
+    padding-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* line 90, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .single_speaker .speaker-name .heading {
+  margin-bottom: 5px;
+}
+
+/* line 92, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .single_speaker .speaker-name .heading span {
+  font-size: 26px;
+  color: #1F1F1F;
+  font-weight: 500;
+}
+
+/* line 97, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .single_speaker .speaker-name .heading .time {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* line 104, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_event.scss */
+.event_area .single_speaker p {
+  color: #1a36fe;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+
+
+
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_bradcam.scss */
+.bradcam_bg {
+  background-image: url(../img/banner/breadcam_bg.png);
+}
+
+/* line 4, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_bradcam.scss */
+.breadcam_area {
+  padding: 170px 0;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 10, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_bradcam.scss */
+.breadcam_area .bradcam_text h3 {
+  font-size: 60px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+@media (max-width: 767px) {
+  /* line 10, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_bradcam.scss */
+  .breadcam_area .bradcam_text h3 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 10, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_bradcam.scss */
+  .breadcam_area .bradcam_text h3 {
+    font-size: 35px;
+  }
+}
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area {
+  padding-top: 196px;
+  padding-bottom: 166px;
+}
+
+@media (max-width: 767px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+  .team_area {
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+  .team_area {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+}
+
+/* line 15, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area span {
+  font-size: 14px;
+}
+
+/* line 21, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team {
+  margin-bottom: 30px;
+}
+
+/* line 23, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team .thumb {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: auto;
+  z-index: 9;
+  overflow: hidden;
+}
+.event-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(233, 96, 44);
+  padding: 20px;
+  width: 90%;
+  text-align: center;
+  background-color: #ffe176;
+  transition: background-color 0.3s ease;
+  border-radius: 50px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
+.event-details{
+  background-color: rgba(233, 98, 44, 0.555);
+  border-radius: 20px;
+}
+
+
+
+.event-details p{
+  margin-top: 10px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease; 
+}
+
+
+.event-title:hover {
+  background-color: #ffcc66; /* New background color on hover */
+   border: 3px solid #ffcc66;
+}
+
+
+@media (max-width: 400px) {
+  /* line 133, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+  .event-title {
+    font-size: 12px;
+    }
+  }
+
+  @media (min-width: 500px) {
+    /* line 133, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+    .event-title {
+      font-size: 14px;
+      }
+    }
+    @media (max-width: 1200px) {
+      /* line 133, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+      .event-title {
+        font-size: 16px;
+        }
+      }
+    
+
+ 
+  
+
+
+/* line 33, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team .thumb .author_links {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 36px;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: .3s;
+}
+
+/* line 42, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team .thumb .author_links ul li {
+  display: inline-block;
+}
+
+/* line 44, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team .thumb .author_links ul li a {
+  font-size: 15px;
+  color: #d5ccc7;
+  margin: 0 12px;
+}
+
+/* line 48, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team .thumb .author_links ul li a:hover {
+  color: #fff;
+}
+
+/* line 55, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team .thumb::before {
+  position: absolute;
+  content: '';
+  background: #000;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border-radius: 50%;
+  opacity: .5;
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 69, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team h3 {
+  font-size: 26px;
+  color: #131313;
+  font-weight: 500;
+  margin-top: 45px;
+  margin-bottom: 17px;
+}
+
+/* line 76, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team p {
+  color: #808080;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* line 82, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team:hover .author_links {
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* line 85, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_area .single_team:hover .thumb::before {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  opacity: .5;
+}
+
+/* line 92, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_1 {
+  background-image: url(../img/team/team1.png);
+}
+
+/* line 95, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_2 {
+  background-image: url(../img/team/team2.png);
+}
+
+/* line 98, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_team.scss */
+.team_3 {
+  background-image: url(../img/team/team3.png);
+}
+
+/*=================== contact banner start ====================*/
+/* line 3, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.dropdown .dropdown-menu {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 10, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-info {
+  margin-bottom: 25px;
+}
+
+/* line 13, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-info__icon {
+  margin-right: 20px;
+}
+
+/* line 16, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-info__icon i, .contact-info__icon span {
+  color: #8f9195;
+  font-size: 27px;
+}
+
+/* line 24, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-info .media-body h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #2a2a2a;
+}
+
+/* line 30, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-info .media-body h3 a:hover {
+  color: #ff5e13;
+}
+
+/* line 36, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-info .media-body p {
+  color: #8a8a8a;
+}
+
+/*=================== contact banner end ====================*/
+/*=================== contact form start ====================*/
+/* line 45, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-title {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* line 53, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.form-contact label {
+  font-size: 14px;
+}
+
+/* line 57, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.form-contact .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 61, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.form-contact .form-control {
+  border: 1px solid #e5e6e9;
+  border-radius: 0px;
+  height: 48px;
+  padding-left: 18px;
+  font-size: 13px;
+  background: transparent;
+}
+
+/* line 69, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.form-contact .form-control:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 74, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.form-contact .form-control::placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+/* line 80, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.form-contact textarea {
+  border-radius: 0px;
+  height: 100% !important;
+}
+
+/*=================== contact form end ====================*/
+/* Contact Success and error Area css
+============================================================================================ */
+/* line 97, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.modal-message .modal-dialog {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) !important;
+  margin: 0px;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* line 106, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.modal-message .modal-dialog .modal-content .modal-header {
+  text-align: center;
+  display: block;
+  border-bottom: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* line 112, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.modal-message .modal-dialog .modal-content .modal-header .close {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  padding: 0px;
+  color: #fff;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* line 121, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.modal-message .modal-dialog .modal-content .modal-header h2 {
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* line 126, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.modal-message .modal-dialog .modal-content .modal-header p {
+  display: block;
+}
+
+/* line 133, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-section {
+  padding: 130px 0 100px;
+}
+
+@media (max-width: 991px) {
+  /* line 133, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+  .contact-section {
+    padding: 70px 0 40px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 133, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+  .contact-section {
+    padding: 80px 0 50px;
+  }
+}
+
+/* line 141, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-section .btn_2 {
+  background-color: #191d34;
+  padding: 18px 60px;
+  border-radius: 50px;
+  margin-top: 0;
+}
+
+/* line 146, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
+.contact-section .btn_2:hover {
+  background-color: #ff5e13;
+}
+
+/* line 75, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+.sample-text-area {
+  background: #fff;
+  padding: 100px 0 70px 0;
+}
+
+/* line 80, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+.text-heading {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+/* line 85, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+b,
+sup,
+sub,
+u,
+del {
+  color: #ff5e13;
+}
+
+/* line 93, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+h1 {
+  font-size: 36px;
+}
+
+/* line 97, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+h2 {
+  font-size: 30px;
+}
+
+/* line 101, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+h3 {
+  font-size: 24px;
+}
+
+/* line 105, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+h4 {
+  font-size: 18px;
+}
+
+/* line 109, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+h5 {
+  font-size: 16px;
+}
+
+/* line 113, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+h6 {
+  font-size: 14px;
+}
+
+/* line 117, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+}
+
+/* line 127, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {
+  color: #828bb2;
+}
+
+/* line 137, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+.button-area {
+  background: #fff;
+}
+
+/* line 138, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+.button-area .border-top-generic {
+  padding: 70px 15px;
+  border-top: 1px dotted #eee;
+}
+
+/* line 146, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+.button-group-area .genric-btn {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* line 149, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_elements.scss */
+.button-group-area .genric-btn:last-child {
+  margin-right: 0;
+}
+.day{
+  text-align: center; font-size: 60px;
+  margin-bottom: 60px;
+  color: #1a36fe;
+  font-family: 'CustomFont', sans-serif;
+}
+.single_speaker{
+  font-size: 20px;
+}
+
+
+
