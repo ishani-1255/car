@@ -1,0 +1,672 @@
+<section class="carnival-section" id="carnival-tracks">
+    <style>
+      .carnival-section {
+        min-height: 100vh;
+        position: relative;
+        background: linear-gradient(45deg, rgba(193, 98, 171, 0.7), rgba(255, 171, 64, 0.7));
+        padding: 2rem;
+        font-family: 'Arial', sans-serif;
+      }
+  
+      .carnival-section * {
+        box-sizing: border-box;
+      }
+  
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+  
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+  
+      @keyframes confetti-fall {
+        0% { transform: translateY(-100vh) rotate(0deg); }
+        100% { transform: translateY(100vh) rotate(360deg); }
+      }
+  
+      .carnival-section .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 235, 59, 0.9);
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+        animation: confetti-fall 4s linear infinite;
+      }
+  
+      .carnival-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+  
+      .carnival-section .track-content {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(236, 230, 145, 0.9);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 30px rgba(255, 171, 64, 0.5);
+        animation: float 6s ease-in-out infinite;
+        margin-bottom: 2rem;
+      }
+  
+      .carnival-section .track-title {
+        color: rgba(255, 64, 129, 0.9);
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                     0 0 20px rgba(255, 64, 129, 0.4);
+        letter-spacing: 4px;
+      }
+  
+      .carnival-section .track-description {
+        color: rgba(51, 51, 51, 0.9);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+  
+      .carnival-section .content-rows {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+  
+      .carnival-section .content-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1rem;
+        border-radius: 10px;
+        align-items: center;
+        transition: transform 0.3s ease;
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        .carnival-section .content-row {
+          flex-direction: row;
+        }
+      }
+
+      .carnival-section .content-row:hover {
+        transform: translateX(10px);
+      }
+  
+      .carnival-section .content-image {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+  
+      .carnival-section .content-title {
+        color: rgba(51, 51, 51, 0.9);
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+  
+      .carnival-section .content-date {
+        color: rgba(102, 102, 102, 0.9);
+        font-size: 1rem;
+        text-align: center;
+      }
+  
+      @media (min-width: 768px) {
+        .carnival-section .content-title,
+        .carnival-section .content-date {
+          text-align: left;
+        }
+      }
+  
+      .carnival-section .carousel-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+      }
+  
+      .carnival-section .nav-button {
+        background: none;
+        border: none;
+        color: rgba(255, 64, 129, 0.9);
+        font-size: 3rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 1rem;
+      }
+  
+      .carnival-section .nav-button:hover {
+        color: rgba(255, 171, 64, 1);
+        transform: scale(1.2);
+      }
+  
+      .carnival-section .indicators {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+  
+      .carnival-section .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(102, 102, 102, 0.6);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+  
+      .carnival-section .indicator.active {
+        background: rgba(255, 64, 129, 0.9);
+        width: 40px;
+        border-radius: 6px;
+      }
+  
+      .carnival-section .indicator:hover {
+        background: rgba(255, 171, 64, 1);
+      }
+  
+      .carnival-section .ferris-wheel {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+     width: 100px;
+        height: 100px;
+        border: 4px dotted rgba(255, 64, 129, 0.7);
+        border-radius: 50%;
+        animation: spin 10s linear infinite;
+      }
+
+    </style>
+
+    <!-- Remaining HTML content stays the same -->
+    <div class="ferris-wheel"></div>
+    <div class="container">
+      <div class="track-content">
+        <h1 class="track-title">Loading...</h1>
+        <p class="track-description"></p>
+        <div class="content-rows"></div>
+        <div class="carousel-nav">
+          <button class="nav-button prev-button">←</button>
+          <button class="nav-button next-button">→</button>
+        </div>
+        <div class="indicators"></div>
+      </div>
+    </div>
+    <script>
+        (function() {
+          const tracksData = [
+            { 
+              id: 1, 
+              name: 'Best Use of XIAO',
+              description: 'Step right up to see innovative solutions using XIAO microcontrollers in cutting-edge projects!',
+              rows: [
+                { image: '/api/placeholder/200/150', title: 'Smart Home Automation with XIAO', date: 'Dec 10, 2024' },
+                { image: '/api/placeholder/200/150', title: 'XIAO-powered Weather Station', date: 'Dec 11, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Interactive Art Installation', date: 'Dec 12, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Wearable Fitness Tracker', date: 'Dec 13, 2024' }
+              ]
+            },
+            { 
+              id: 2, 
+              name: 'Best Use of AI',
+              description: 'Marvel at the spectacular show of transformative AI technologies pushing the boundaries of intelligent systems!',
+              rows: [
+                { image: '/api/placeholder/200/150', title: 'AI-Powered Image Recognition', date: 'Dec 10, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Natural Language Processing Bot', date: 'Dec 11, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Predictive Analytics Dashboard', date: 'Dec 12, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Machine Learning Model Trainer', date: 'Dec 13, 2024' }
+              ]
+            },
+            { 
+              id: 3, 
+              name: 'Best Product',
+              description: 'Behold the greatest show on earth featuring seamless integration of intelligent network systems!',
+              rows: [
+                { image: '/api/placeholder/200/150', title: 'Smart City Management System', date: 'Dec 10, 2024' },
+                { image: '/api/placeholder/200/150', title: 'IoT Device Network', date: 'Dec 11, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Automated Supply Chain', date: 'Dec 12, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Healthcare Monitoring Platform', date: 'Dec 13, 2024' }
+              ]
+            }
+          ];
+    
+          let currentTrackIndex = 0;
+          let isAutoPlaying = true;
+          let autoPlayInterval;
+          const section = document.querySelector('#carnival-tracks');
+    
+          function createConfetti() {
+            const confettiColors = [
+              'rgba(255, 64, 129, 0.8)', 
+              'rgba(255, 171, 64, 0.8)', 
+              'rgba(64, 202, 255, 0.8)', 
+              'rgba(193, 98, 171, 0.8)', 
+              'rgba(102, 255, 102, 0.8)'
+            ];
+            for(let i = 0; i < 50; i++) {
+              const confetti = document.createElement('div');
+              confetti.className = 'confetti';
+              confetti.style.left = Math.random() * 100 + 'vw';
+              confetti.style.animationDelay = Math.random() * 3 + 's';
+              confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+              section.appendChild(confetti);
+            }
+          }
+    
+          function updateTrack() {
+            const track = tracksData[currentTrackIndex];
+            section.querySelector('.track-title').textContent = track.name;
+            section.querySelector('.track-description').textContent = track.description;
+            
+            const contentRowsContainer = section.querySelector('.content-rows');
+            contentRowsContainer.innerHTML = '';
+            track.rows.forEach(row => {
+              const rowElement = document.createElement('div');
+              rowElement.className = 'content-row';
+              rowElement.innerHTML = `
+                <img src="${row.image}" alt="${row.title}" class="content-image">
+                <div class="content-title">${row.title}</div>
+                <div class="content-date">${row.date}</div>
+              `;
+              contentRowsContainer.appendChild(rowElement);
+            });
+            
+            section.querySelectorAll('.indicator').forEach((indicator, index) => {
+              indicator.classList.toggle('active', index === currentTrackIndex);
+            });
+          }
+    
+          function handlePrev() {
+            currentTrackIndex = currentTrackIndex === 0 ? tracksData.length - 1 : currentTrackIndex - 1;
+            updateTrack();
+            stopAutoPlay();
+          }
+    
+          function handleNext() {
+            currentTrackIndex = currentTrackIndex === tracksData.length - 1 ? 0 : currentTrackIndex + 1;
+            updateTrack();
+            stopAutoPlay();
+          }
+    
+          function stopAutoPlay() {
+            isAutoPlaying = false;
+            clearInterval(autoPlayInterval);
+          }
+    
+          function startAutoPlay() {
+            autoPlayInterval = setInterval(handleNext, 5000);
+          }
+    
+          function initCarousel() {
+            const indicatorsContainer = section.querySelector('.indicators');
+            tracksData.forEach((_, index) => {
+              const indicator = document.createElement('button');
+              indicator.className = 'indicator' + (index === 0 ? ' active' : '');
+              indicator.addEventListener('click', () => {
+                currentTrackIndex = index;
+                updateTrack();
+                stopAutoPlay();
+              });
+              indicatorsContainer.appendChild(indicator);
+            });
+    
+            section.querySelector('.prev-button').addEventListener('click', handlePrev);
+            section.querySelector('.next-button').addEventListener('click', handleNext);
+    
+            startAutoPlay();
+            updateTrack();
+            createConfetti();
+          }
+    
+          initCarousel();
+        })();
+      </script>
+  </section>
+
+
+
+  <section class="festival-zone" id="festival-pathways">
+    <style>
+      .festival-zone {
+        min-height: 100vh;
+        position: relative;
+        background: linear-gradient(45deg, rgba(193, 98, 171, 0.7), rgba(255, 171, 64, 0.7));
+        padding: 2rem;
+        font-family: 'Arial', sans-serif;
+      }
+
+      .festival-zone * {
+        box-sizing: border-box;
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes confetti-drop {
+        0% { transform: translateY(-100vh) rotate(0deg); }
+        100% { transform: translateY(100vh) rotate(360deg); }
+      }
+
+      .festival-zone .sparkle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 235, 59, 0.9);
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+        animation: confetti-drop 4s linear infinite;
+      }
+
+      .festival-zone .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .festival-zone .pathway-content {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(236, 230, 145, 0.9);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 30px rgba(255, 171, 64, 0.5);
+        animation: bounce 6s ease-in-out infinite;
+        margin-bottom: 2rem;
+      }
+
+      .festival-zone .pathway-header {
+        color: rgba(255, 64, 129, 0.9);
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                     0 0 20px rgba(255, 64, 129, 0.4);
+        letter-spacing: 4px;
+      }
+
+      .festival-zone .pathway-text {
+        color: rgba(51, 51, 51, 0.9);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .festival-zone .info-grids {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .festival-zone .info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1rem;
+        border-radius: 10px;
+        align-items: center;
+        transition: transform 0.3s ease;
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        .festival-zone .info-item {
+          flex-direction: row;
+        }
+      }
+
+      .festival-zone .info-item:hover {
+        transform: translateX(10px);
+      }
+
+      .festival-zone .info-image {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .festival-zone .info-title {
+        color: rgba(51, 51, 51, 0.9);
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .festival-zone .info-date {
+        color: rgba(102, 102, 102, 0.9);
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .festival-zone .info-title,
+        .festival-zone .info-date {
+          text-align: left;
+        }
+      }
+
+      .festival-zone .carousel-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+      }
+
+      .festival-zone .control-button {
+        background: none;
+        border: none;
+        color: rgba(255, 64, 129, 0.9);
+        font-size: 3rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 1rem;
+      }
+
+      .festival-zone .control-button:hover {
+        color: rgba(255, 171, 64, 1);
+        transform: scale(1.2);
+      }
+
+      .festival-zone .track-dots {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .festival-zone .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(102, 102, 102, 0.6);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .festival-zone .dot.active {
+        background: rgba(255, 64, 129, 0.9);
+        width: 40px;
+        border-radius: 6px;
+      }
+
+      .festival-zone .dot:hover {
+        background: rgba(255, 171, 64, 1);
+      }
+
+      .festival-zone .rotating-wheel {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+        border: 4px dotted rgba(255, 64, 129, 0.7);
+        border-radius: 50%;
+        animation: rotate 10s linear infinite;
+      }
+
+    </style>
+
+    <div class="rotating-wheel"></div>
+    <div class="content-wrapper">
+      <div class="pathway-content">
+        <h1 class="pathway-header">Loading...</h1>
+        <p class="pathway-text"></p>
+        <div class="info-grids"></div>
+        <div class="carousel-controls">
+          <button class="control-button prev-btn">←</button>
+          <button class="control-button next-btn">→</button>
+        </div>
+        <div class="track-dots"></div>
+      </div>
+    </div>
+    <script>
+        (function() {
+          const pathwaysList = [
+            { 
+              id: 1, 
+              name: 'Best Use of XIAO',
+              description: 'Step right up to see innovative solutions using XIAO microcontrollers in cutting-edge projects!',
+              items: [
+                { image: '/api/placeholder/200/150', title: 'Smart Home Automation with XIAO', date: 'Dec 10, 2024' },
+                { image: '/api/placeholder/200/150', title: 'XIAO-powered Weather Station', date: 'Dec 11, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Interactive Art Installation', date: 'Dec 12, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Wearable Fitness Tracker', date: 'Dec 13, 2024' }
+              ]
+            },
+            { 
+              id: 2, 
+              name: 'Best Use of AI',
+              description: 'Marvel at the spectacular show of transformative AI technologies pushing the boundaries of intelligent systems!',
+              items: [
+                { image: '/api/placeholder/200/150', title: 'AI-Powered Image Recognition', date: 'Dec 10, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Natural Language Processing Bot', date: 'Dec 11, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Predictive Analytics Dashboard', date: 'Dec 12, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Machine Learning Model Trainer', date: 'Dec 13, 2024' }
+              ]
+            },
+            { 
+              id: 3, 
+              name: 'Best Product',
+              description: 'Behold the greatest show on earth featuring seamless integration of intelligent network systems!',
+              items: [
+                { image: '/api/placeholder/200/150', title: 'Smart City Management System', date: 'Dec 10, 2024' },
+                { image: '/api/placeholder/200/150', title: 'IoT Device Network', date: 'Dec 11, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Automated Supply Chain', date: 'Dec 12, 2024' },
+                { image: '/api/placeholder/200/150', title: 'Healthcare Monitoring Platform', date: 'Dec 13, 2024' }
+              ]
+            }
+          ];
+    
+          let currentIndex = 0;
+          let autoplayEnabled = true;
+          let autoplayTimer;
+          const zone = document.querySelector('#festival-pathways');
+    
+          function createSparkles() {
+            const sparkleColors = [
+              'rgba(255, 64, 129, 0.8)', 
+              'rgba(255, 171, 64, 0.8)', 
+              'rgba(64, 202, 255, 0.8)', 
+              'rgba(193, 98, 171, 0.8)', 
+              'rgba(102, 255, 102, 0.8)'
+            ];
+            for(let i = 0; i < 50; i++) {
+              const sparkle = document.createElement('div');
+              sparkle.className = 'sparkle';
+              sparkle.style.left = Math.random() * 100 + 'vw';
+              sparkle.style.animationDelay = Math.random() * 3 + 's';
+              sparkle.style.backgroundColor = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
+              zone.appendChild(sparkle);
+            }
+          }
+    
+          function refreshPathway() {
+            const pathway = pathwaysList[currentIndex];
+            zone.querySelector('.pathway-header').textContent = pathway.name;
+            zone.querySelector('.pathway-text').textContent = pathway.description;
+            
+            const grids = zone.querySelector('.info-grids');
+            grids.innerHTML = '';
+            pathway.items.forEach(item => {
+              const itemElement = document.createElement('div');
+              itemElement.className = 'info-item';
+              itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.title}" class="info-image">
+                <div class="info-title">${item.title}</div>
+                <div class="info-date">${item.date}</div>
+              `;
+              grids.appendChild(itemElement);
+            });
+            
+            zone.querySelectorAll('.dot').forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentIndex);
+            });
+          }
+    
+          function goToPrevious() {
+            currentIndex = currentIndex === 0 ? pathwaysList.length - 1 : currentIndex - 1;
+            refreshPathway();
+            stopAutoplay();
+          }
+    
+          function goToNext() {
+            currentIndex = (currentIndex + 1) % pathwaysList.length;
+            refreshPathway();
+            stopAutoplay();
+          }
+
+          function stopAutoplay() {
+            if (autoplayEnabled) {
+              clearInterval(autoplayTimer);
+              autoplayEnabled = false;
+            }
+          }
+
+          function initDots() {
+            const dotsContainer = zone.querySelector('.track-dots');
+            dotsContainer.innerHTML = '';
+            pathwaysList.forEach((_, index) => {
+              const dot = document.createElement('div');
+              dot.className = 'dot';
+              dot.addEventListener('click', () => {
+                currentIndex = index;
+                refreshPathway();
+                stopAutoplay();
+              });
+              dotsContainer.appendChild(dot);
+            });
+          }
+
+          createSparkles();
+          refreshPathway();
+          initDots();
+          autoplayTimer = setInterval(goToNext, 5000);
+
+          zone.querySelector('.prev-btn').addEventListener('click', goToPrevious);
+          zone.querySelector('.next-btn').addEventListener('click', goToNext);
+        })();
+    </script>
+</section

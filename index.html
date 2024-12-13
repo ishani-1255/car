@@ -206,6 +206,78 @@
 
         #carousel-makespace { background: linear-gradient(145deg, #FF6B6B, #FFE66D); }
         #carousel-conference { background: linear-gradient(145deg, #4ECDC4, #45B7D1); }
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .event_area {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            .date {
+                font-size: 1.2rem;
+            }
+
+            .event-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .carousel-item {
+                width: 200px;
+                max-width: 90vw;
+            }
+
+            .carousel-item img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .carousel-item h4 {
+                font-size: 1rem;
+            }
+
+            .carousel-item p {
+                font-size: 0.9rem;
+            }
+
+            .carousel-button {
+                width: 30px;
+                height: 30px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+
+            .event-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .carousel-item {
+                width: 180px;
+                max-width: 95vw;
+            }
+
+            .carousel-item img {
+                width: 90px;
+                height: 90px;
+            }
+
+            .carousel-item h4 {
+                font-size: 0.9rem;
+            }
+
+            .carousel-item p {
+                font-size: 0.8rem;
+            }
+        }
    
   </style>
 
@@ -318,280 +390,455 @@
         </div>
       </div>
     </div>
-    <!-- about_area_end -->
+    <!-- about_area_end 
+
+   
+
+
+-->
 
 
 
+  <section class="carnival-section" id="carnival-tracks">
+    <style>
+      .carnival-section {
+        min-height: 100vh;
+        position: relative;
+        background: linear-gradient(45deg, rgba(193, 98, 171, 0.7), rgba(255, 171, 64, 0.7));
+        padding: 2rem;
+        font-family: 'Arial', sans-serif;
+      }
+  
+      .carnival-section * {
+        box-sizing: border-box;
+      }
+  
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+  
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+  
+      @keyframes confetti-fall {
+        0% { transform: translateY(-100vh) rotate(0deg); }
+        100% { transform: translateY(100vh) rotate(360deg); }
+      }
+  
+      .carnival-section .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 235, 59, 0.9);
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+        animation: confetti-fall 4s linear infinite;
+      }
+  
+      .carnival-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+  
+      .carnival-section .track-content {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(236, 230, 145, 0.9);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 30px rgba(255, 171, 64, 0.5);
+        animation: float 6s ease-in-out infinite;
+        margin-bottom: 2rem;
+      }
+  
+      .carnival-section .track-title {
+        color: rgba(255, 64, 129, 0.9);
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                     0 0 20px rgba(255, 64, 129, 0.4);
+        letter-spacing: 4px;
+      }
+  
+      .carnival-section .track-description {
+        color: rgba(51, 51, 51, 0.9);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+  
+      .carnival-section .content-rows {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+  
+      .carnival-section .content-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1rem;
+        background:  #efebaf;
+        padding: 1rem;
+        border-radius: 10px;
+        align-items: center;
+        transition: transform 0.3s ease;
+        width: 100%;
+      }
 
-<!-- Event Area Section -->
-<div class="event_area" style="background-color: #ece691; padding:1px; border-radius: 20px;">
-  <div class="container" style="max-width: 1200px; margin: auto;">
-    <!-- Header Section -->
-    <div class="double_line">
-      <div class="row" style="background-color: #0181F5; border-radius: 15px; padding: 30px;">
-        <h1 class="vr_text d-lg-block" style="color: #fff; font-size: 2.5rem; letter-spacing: 5px; text-align: center; margin-bottom: 30px;">WORKSHOPS</h1>
+      @media (min-width: 768px) {
+        .carnival-section .content-row {
+          flex-direction: row;
+        }
+      }
 
-        <!-- Date Section -->
-        <div class="col-xl-3 col-lg-3" style="text-align: center;">
-          <div class="date" style="color: #fff; font-size: 1.8rem; font-weight: bold;">14 Dec 2024</div>
+      .carnival-section .content-row:hover {
+        transform: translateX(10px);
+      }
+  
+      .carnival-section .content-image {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+  
+      .carnival-section .content-title {
+  color: rgba(51, 51, 51, 0.9);
+  font-size: clamp(1.2rem, 4vw + 0.5rem, 1.8rem); /* Fluid typography */
+  font-weight: 700; /* Bold with more weight options */
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 0.3rem;
+
+  text-transform: capitalize;
+}
+
+.carnival-section .content-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(255, 64, 129, 0.6);
+  transform: translateX(-50%);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.carnival-section .content-title:hover {
+  color: rgba(255, 64, 129, 0.9);
+  transform: translateY(-3px);
+  text-shadow: 1px 1px 3px rgba(255, 64, 129, 0.3);
+}
+
+.carnival-section .content-title:hover::after {
+  width: 50px;
+  background-color: rgba(255, 64, 129, 0.9);
+}
+
+.carnival-section .content-date {
+  color: rgba(102, 102, 102, 0.9);
+  font-size: clamp(1rem, 3.5vw + 0.3rem, 1.4rem); /* Fluid typography */
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  
+}
+
+.carnival-section .content-date:hover {
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .carnival-section .content-title,
+  .carnival-section .content-date {
+    text-align: left;
+  }
+
+  .carnival-section .content-title::after {
+    left: 0;
+    transform: none;
+  }
+
+  .carnival-section .content-title:hover {
+    transform: translateX(5px);
+  }
+}
+
+/* Enhanced Large Screen Styles */
+@media (min-width: 1200px) {
+  .carnival-section .content-title {
+    font-size: clamp(1.3rem, 4vw + 0.6rem, 2rem);
+    letter-spacing: 0.7px;
+  }
+
+  .carnival-section .content-date {
+    font-size: clamp(1.1rem, 3.5vw + 0.4rem, 1.5rem);
+    letter-spacing: 0.4px;
+  }
+}
+
+/* Small Screen Optimization */
+@media (max-width: 375px) {
+  .carnival-section .content-title {
+    font-size: clamp(1rem, 4vw + 0.3rem, 1.5rem);
+  }
+
+  .carnival-section .content-date {
+    font-size: clamp(0.9rem, 3.5vw + 0.2rem, 1.2rem);
+  }
+}
+  
+      @media (min-width: 768px) {
+        .carnival-section .content-title,
+        .carnival-section .content-date {
+          text-align: left;
+        }
+        
+      }
+     
+  
+      .carnival-section .carousel-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+      }
+  
+      .carnival-section .nav-button {
+        background: none;
+        border: none;
+        color: rgba(255, 64, 129, 0.9);
+        font-size: 3rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 1rem;
+      }
+  
+      .carnival-section .nav-button:hover {
+        color: rgba(255, 171, 64, 1);
+        transform: scale(1.2);
+      }
+  
+      .carnival-section .indicators {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+  
+      .carnival-section .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(102, 102, 102, 0.6);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+  
+      .carnival-section .indicator.active {
+        background: rgba(255, 64, 129, 0.9);
+        width: 40px;
+        border-radius: 6px;
+      }
+  
+      .carnival-section .indicator:hover {
+        background: rgba(255, 171, 64, 1);
+      }
+  
+      .carnival-section .ferris-wheel {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+     width: 100px;
+        height: 100px;
+        border: 4px dotted rgba(255, 64, 129, 0.7);
+        border-radius: 50%;
+        animation: spin 10s linear infinite;
+      }
+      
+
+    </style>
+
+    <!-- Remaining HTML content stays the same -->
+    <div class="ferris-wheel"></div>
+    <div class="container">
+      <div class="track-content">
+        <h1 class="track-title">Loading...</h1>
+        <p class="track-description"></p>
+        <div class="content-rows"></div>
+        <div class="carousel-nav">
+          <button class="nav-button prev-button">←</button>
+          <button class="nav-button next-button">→</button>
         </div>
-
-        <!-- Day Information -->
-        <div class="col-xl-9 col-lg-9" style="color: #fff;">
-          <!-- Workshop Sessions -->
-         
-          <section style="font-family: 'Inter', system-ui, -apple-system, sans-serif;
-         
-          min-height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 40px 20px;
-          animation: backgroundShift 20s ease infinite; ">
-            <div class="carnival-container">
-                <div class="decorative-circle-1"></div>
-                <div class="decorative-circle-2"></div>
-                
-                <h2 class="carnival-title">DAY 01 </h2>
-                
-                <div class="events-grid">
-                    <!-- MakerSpace Section -->
-                    <div class="event-section" style="background: linear-gradient(145deg, #FF6B6B, #FFE66D);">
-                        <h3>🎨 MakerSpace</h3>
-                        <div class="carousel" id="carousel-makespace">
-                            <div class="carousel-container">
-                                <div class="carousel-item">
-                                    <img src="https://i.ibb.co/mHPHfDj/game-design.png" alt="Robotics Workshop">
-                                    <div>
-                                        <h4>Game Development</h4>
-                                        <p>10:00 AM - 12:00 PM</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://i.ibb.co/Vgpb174/Instagram-post-18-8.png" alt="3D Printing Demo">
-                                    <div>
-                                        <h4>Toy Making</h4>
-                                        <p>2:00 PM - 4:00 PM</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                  <img src="https://i.ibb.co/Bs37chd/origami.png" alt="Robotics Workshop">
-                                  <div>
-                                      <h4>Origami Workshop</h4>
-                                      <p>4:00 PM - 6:00 PM</p>
-                                  </div>
-                              </div>
-                                <div class="carousel-item">
-                                    <img src="https://i.ibb.co/mHPHfDj/game-design.png" alt="Robotics Workshop">
-                                    <div>
-                                        <h4>Game Development</h4>
-                                        <p>10:00 AM - 12:00 PM</p>
-                                    </div>
-                                </div>
-                              <div class="carousel-item">
-                                    <img src="https://i.ibb.co/Vgpb174/Instagram-post-18-8.png" alt="3D Printing Demo">
-                                    <div>
-                                        <h4>Toy Making</h4>
-                                        <p>2:00 PM - 4:00 PM</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-button left" onclick="moveCarousel('carousel-makespace', 'left')">&#10094;</button>
-                            <button class="carousel-button right" onclick="moveCarousel('carousel-makespace', 'right')">&#10095;</button>
-                        </div>
-                    </div>
-        
-                    <!-- Conference Hall Section -->
-                    <div class="event-section" style="background: linear-gradient(145deg, #4ECDC4, #45B7D1);">
-                        <h3>🎭 Conference Hall</h3>
-                        <div class="carousel" id="carousel-conference">
-                            <div class="carousel-container">
-                                <div class="carousel-item">
-                                    <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Keynote Address">
-                                    <div>
-                                        <h4>Networking Activity</h4>
-                                        <p>10:00 AM - 11:20 AM</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZAAQewtAO_UjGYnnHoAHEwduPutz80Muf2g&s" alt="Panel Discussion on AI">
-                                    <div>
-                                        <h4>Board Games</h4>
-                                        <p>11:20 AM -  12:00 PM</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                  <img src="https://i.ibb.co/mbthGF1/crochet.png" alt="Panel Discussion on AI">
-                                  <div>
-                                      <h4>Crochet Workshop</h4>
-                                      <p>2:00 PM -  4:00 PM</p>
-                                  </div>
-                              </div>
-                              <div class="carousel-item">
-                                <img src="https://media.licdn.com/dms/image/v2/D5622AQHCzC59LQEA4A/feedshare-shrink_800/feedshare-shrink_800/0/1733634916537?e=2147483647&v=beta&t=KnzVZKJSzAFVcW3_v2NfNRe312MQJwdpftwUKFp0TUw" alt="Panel Discussion on AI">
-                                <div>
-                                    <h4>Design Literacy</h4>
-                                    <p>4:00 PM -  6:00 PM</p>
-                                </div>
-                            </div>
-                            </div>
-                            <button class="carousel-button left" onclick="moveCarousel('carousel-conference', 'left')">&#10094;</button>
-                            <button class="carousel-button right" onclick="moveCarousel('carousel-conference', 'right')">&#10095;</button>
-                        </div>
-                    </div>
-        
-                    <!-- Event Hall Section -->
-                    <div class="event-section" style="background: linear-gradient(145deg, #FF69B4, #FF1493);">
-                        <h3>🎪 Event Hall</h3>
-                        <div class="carousel" id="carousel-event">
-                            <div class="carousel-container">
-                                <div class="carousel-item">
-                                    <img src="https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg" alt="Magic Show">
-                                    <div>
-                                        <h4>Project Exhibition</h4>
-                                        <p>11:20 AM - 12:00 PM</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://i.ibb.co/9nn7CNt/flash.png" alt="Stand-Up Comedy">
-                                    <div>
-                                        <h4>Flash Talk</h4>
-                                        <p>2:00 PM - 3:20PM</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg" alt="Magic Show">
-                                    <div>
-                                        <h4>Project Exhibition</h4>
-                                        <p>3:20 PM - 4:00 PM</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                  <img src="https://i.ibb.co/9nn7CNt/flash.png" alt="Stand-Up Comedy">
-                                  <div>
-                                      <h4>Flash Talk</h4>
-                                      <p>4:00 PM - 5:20PM</p>
-                                  </div>
-                              </div>
-                              <div class="carousel-item">
-                                <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Keynote Address">
-                                <div>
-                                    <h4>Networking Activity</h4>
-                                    <p>5:20 PM - 6:00 PM</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                              <img src="https://media.licdn.com/dms/image/v2/D5622AQEnWeGJ3MuwIQ/feedshare-shrink_800/feedshare-shrink_800/0/1733761893569?e=2147483647&v=beta&t=COiPd68nV9meqPE1lIAk_wYladBfWZRkH2aDj1lpqaQ" alt="Keynote Address">
-                              <div>
-                                  <h4>Saas Tech Stand-Up </h4>
-                                  <p>6:00 PM - 8:00 PM</p>
-                              </div>
-                          </div>
-                            </div>
-                            <button class="carousel-button left" onclick="moveCarousel('carousel-event', 'left')">&#10094;</button>
-                            <button class="carousel-button right" onclick="moveCarousel('carousel-event', 'right')">&#10095;</button>
-                        </div>
-                    </div>
-
-                                <!-- Lobby -->
-            <div class="event-section" style="background: linear-gradient(145deg, #8A4FFF, #5F27CD);">
-              <h3>🎮 Lobby</h3>
-              <div class="carousel" id="carousel-gaming">
-                  <div class="carousel-container">
-                      <div class="carousel-item">
-                          <img src="https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/" alt="eSports Tournament">
-                          <div>
-                              <h4>Empathy Walk</h4>
-                              <p>10:00 PM - 12:00 PM</p>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="VR Gaming Experience">
-                          <div>
-                              <h4>Networking Activity</h4>
-                              <p>2:00 PM - 4:00 PM</p>
-                          </div>
-                      </div>
-                  </div>
-                  <button class="carousel-button left" onclick="moveCarousel('carousel-gaming', 'left')">&#10094;</button>
-                  <button class="carousel-button right" onclick="moveCarousel('carousel-gaming', 'right')">&#10095;</button>
-              </div>
-          </div>
-
-          <!-- Meeting Room -->
-          <div class="event-section" style="background: linear-gradient(145deg, #FF6B35, #F7B32D);">
-              <h3> 🎡  Meeting Room</h3>
-              <div class="carousel" id="carousel-food">
-                  <div class="carousel-container">
-                      <div class="carousel-item">
-                          <img src="https://img.freepik.com/free-vector/cartoon-gamer-room-illustration_23-2148916747.jpg" alt="Cooking Masterclass">
-                          <div>
-                              <h4>Game Rooms</h4>
-                              <p>10:00 AM - 12:00 PM</p>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZxhqwUj0ZR-XEw0D9sSRj2-Jb-siZb_VrkQ&s" alt="Global Food Tasting">
-                          <div>
-                              <h4>Game Room</h4>
-                              <p>2:00 PM - 4:00 PM</p>
-                          </div>
-                      </div>
-
-                      <div class="carousel-item">
-                        <img src="https://bloximages.newyork1.vip.townnews.com/appeal-democrat.com/content/tncms/assets/v3/editorial/6/74/674fceba-db22-11ed-b4e4-fb89fe525939/6439ec40ac95d.image.jpg?resize=1200%2C900" alt="Global Food Tasting">
-                        <div>
-                            <h4>VR Room</h4>
-                            <p>4:00 PM - 6:00 PM</p>
-                        </div>
-                    </div>
-                  </div>
-                  <button class="carousel-button left" onclick="moveCarousel('carousel-food', 'left')">&#10094;</button>
-                  <button class="carousel-button right" onclick="moveCarousel('carousel-food', 'right')">&#10095;</button>
-              </div>
-          </div>
-                </div>
-            </div>
-        
-            <script>
-                function moveCarousel(carouselId, direction) {
-                    const carousel = document.getElementById(carouselId);
-                    const carouselContainer = carousel.querySelector('.carousel-container');
-                    const items = carouselContainer.querySelectorAll('.carousel-item');
-                    let currentIndex = parseInt(carousel.dataset.index) || 0;
-        
-                    if (direction === 'left') {
-                        currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
-                    } else {
-                        currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
-                    }
-        
-                    carousel.dataset.index = currentIndex;
-                    const offset = -currentIndex * (items[0].offsetWidth + 20);
-                    carouselContainer.style.transform = `translateX(${offset}px)`;
-                }
-            </script>
-        </section>
-
-        </div>
+        <div class="indicators"></div>
       </div>
     </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script>
+        (function() {
+          const tracksData = [
+            { 
+              id: 1, 
+              name: 'Maker Space',
+              description: 'Step right up to see innovative events!',
+              rows: [
+                { image: 'https://i.ibb.co/mHPHfDj/game-design.png', title: 'Game Development', date: '10:00 AM - 12:00 PM' },
+                { image: 'https://i.ibb.co/Vgpb174/Instagram-post-18-8.png', title: 'Toy Making', date: '2:00 PM - 4:00 PM' },
+                { image: 'https://i.ibb.co/Bs37chd/origami.png', title: 'Origami Workshop', date: '4:00 PM - 6:00 PM' },
+              ]
+            },
+            { 
+              id: 2, 
+              name: 'Conference Hall ',
+              description: 'Marvel at the spectacular shows of TinkerSpace!',
+              rows: [
+                { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '10:00 AM - 11:20 AM' },
+                { image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZAAQewtAO_UjGYnnHoAHEwduPutz80Muf2g&s', title: 'Board Games', date: '11:20 AM -  12:00 PM' },
+                { image: 'https://i.ibb.co/mbthGF1/crochet.png', title: 'Crochet Workshop', date: '2:00 PM -  4:00 PM' },
+                { image: 'https://media.licdn.com/dms/image/v2/D5622AQHCzC59LQEA4A/feedshare-shrink_800/feedshare-shrink_800/0/1733634916537?e=2147483647&v=beta&t=KnzVZKJSzAFVcW3_v2NfNRe312MQJwdpftwUKFp0TUw', title: 'Design Literacy', date: '4:00 PM -  6:00 PM' }
+              ]
+            },
+            { 
+              id: 3, 
+              name: 'Event Hall',
+              description: 'Behold the greatest show & workshops!',
+              rows: [
+                { image: 'https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg', title: 'Project Exhibition', date: '11:20 AM - 12:00 PM' },
+                { image: 'https://i.ibb.co/9nn7CNt/flash.png', title: 'Flash Talk', date: '2:00 PM - 3:20PM' },
+                { image: 'https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg', title: 'Project Exhibition', date: '3:20 PM - 4:00 PM' },
+                { image: 'https://i.ibb.co/9nn7CNt/flash.png', title: 'Flash Talk', date: '4:00 PM - 5:20PM' },
+                { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '5:20 PM - 6:00 PM' },
+                { image: 'https://media.licdn.com/dms/image/v2/D5622AQEnWeGJ3MuwIQ/feedshare-shrink_800/feedshare-shrink_800/0/1733761893569?e=2147483647&v=beta&t=COiPd68nV9meqPE1lIAk_wYladBfWZRkH2aDj1lpqaQ" alt="Keynote Address', title: 'Saas Tech Stand-Up', date: '6:00 PM - 8:00 PM' }
+              ]
+            },
+            { 
+              id: 4, 
+              name: 'Lobby',
+              description: 'Marvel at the spectacular shows of TinkerSpace!',
+              rows: [
+              { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '10:00 AM - 12:00 PM & 2:00 PM - 4:00 PM' },
+              ]
+            },
+            { 
+              id: 5, 
+              name: 'Meeting Room',
+              description: 'Step right up to see innovative events!',
+              rows: [
+              { image: 'https://img.freepik.com/free-vector/cartoon-gamer-room-illustration_23-2148916747.jpg', title: 'Game Rooms', date: '10:00 AM - 12:00 PM & 2:00 PM - 4:00 PM' },
+              { image: 'https://bloximages.newyork1.vip.townnews.com/appeal-democrat.com/content/tncms/assets/v3/editorial/6/74/674fceba-db22-11ed-b4e4-fb89fe525939/6439ec40ac95d.image.jpg?resize=1200%2C900', title: 'VR Room', date: '4:00 PM - 6:00 PM' },
+              
+              ]
+            }
+          ];
+    
+          let currentTrackIndex = 0;
+          let isAutoPlaying = true;
+          let autoPlayInterval;
+          const section = document.querySelector('#carnival-tracks');
+    
+          function createConfetti() {
+            const confettiColors = [
+              'rgba(255, 64, 129, 0.8)', 
+              'rgba(255, 171, 64, 0.8)', 
+              'rgba(64, 202, 255, 0.8)', 
+              'rgba(193, 98, 171, 0.8)', 
+              'rgba(102, 255, 102, 0.8)'
+            ];
+            for(let i = 0; i < 50; i++) {
+              const confetti = document.createElement('div');
+              confetti.className = 'confetti';
+              confetti.style.left = Math.random() * 100 + 'vw';
+              confetti.style.animationDelay = Math.random() * 3 + 's';
+              confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+              section.appendChild(confetti);
+            }
+          }
+    
+          function updateTrack() {
+            const track = tracksData[currentTrackIndex];
+            section.querySelector('.track-title').textContent = track.name;
+            section.querySelector('.track-description').textContent = track.description;
+            
+            const contentRowsContainer = section.querySelector('.content-rows');
+            contentRowsContainer.innerHTML = '';
+            track.rows.forEach(row => {
+              const rowElement = document.createElement('div');
+              rowElement.className = 'content-row';
+              rowElement.innerHTML = `
+                <img src="${row.image}" alt="${row.title}" class="content-image">
+                <div class="content-title">${row.title}</div>
+                <div class="content-date">${row.date}</div>
+              `;
+              contentRowsContainer.appendChild(rowElement);
+            });
+            
+            section.querySelectorAll('.indicator').forEach((indicator, index) => {
+              indicator.classList.toggle('active', index === currentTrackIndex);
+            });
+          }
+    
+          function handlePrev() {
+            currentTrackIndex = currentTrackIndex === 0 ? tracksData.length - 1 : currentTrackIndex - 1;
+            updateTrack();
+            stopAutoPlay();
+          }
+    
+          function handleNext() {
+            currentTrackIndex = currentTrackIndex === tracksData.length - 1 ? 0 : currentTrackIndex + 1;
+            updateTrack();
+            stopAutoPlay();
+          }
+    
+          function stopAutoPlay() {
+            isAutoPlaying = false;
+            clearInterval(autoPlayInterval);
+          }
+    
+          function startAutoPlay() {
+            autoPlayInterval = setInterval(handleNext, 5000);
+          }
+    
+          function initCarousel() {
+            const indicatorsContainer = section.querySelector('.indicators');
+            tracksData.forEach((_, index) => {
+              const indicator = document.createElement('button');
+              indicator.className = 'indicator' + (index === 0 ? ' active' : '');
+              indicator.addEventListener('click', () => {
+                currentTrackIndex = index;
+                updateTrack();
+                stopAutoPlay();
+              });
+              indicatorsContainer.appendChild(indicator);
+            });
+    
+            section.querySelector('.prev-button').addEventListener('click', handlePrev);
+            section.querySelector('.next-button').addEventListener('click', handleNext);
+    
+            startAutoPlay();
+            updateTrack();
+            createConfetti();
+          }
+    
+          initCarousel();
+        })();
+      </script>
+  </section>
 
 
 <section style="font-family: 'Arial', sans-serif; background: #ece691; margin: 0; padding: 0;">
@@ -824,358 +1071,468 @@
 
 
 
+<section class="festival-zone" id="festival-pathways">
+    <style>
+      .festival-zone {
+        min-height: 100vh;
+        position: relative;
+        background: linear-gradient(45deg, rgba(193, 98, 171, 0.7), rgba(255, 171, 64, 0.7));
+        padding: 2rem;
+        font-family: 'Arial', sans-serif;
+      }
 
-<!-- Event Area Section -->
-<div class="event_area" style="background-color: #ece691; padding: 0px; border-radius: 20px;">
-  <div class="container" style="max-width: 1200px; margin: auto;">
-    <!-- Header Section -->
-    <div class="double_line">
-      <div class="row" style="background-color: rgba(39, 99, 39, 0.73); border-radius: 15px; padding: 30px;">
-        <h1 class="vr_text d-lg-block" style="color: #fff; font-size: 2.5rem; letter-spacing: 5px; text-align: center; margin-bottom: 30px;">WORKSHOPS</h1>
+      .festival-zone * {
+        box-sizing: border-box;
+      }
 
-        <!-- Date Section -->
-        <div class="col-xl-3 col-lg-3" style="text-align: center;">
-          <div class="date" style="color: #fff; font-size: 1.8rem; font-weight: bold;">15 Dec 2024</div>
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes confetti-drop {
+        0% { transform: translateY(-100vh) rotate(0deg); }
+        100% { transform: translateY(100vh) rotate(360deg); }
+      }
+
+      .festival-zone .sparkle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 235, 59, 0.9);
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+        animation: confetti-drop 4s linear infinite;
+      }
+
+      .festival-zone .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .festival-zone .pathway-content {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(236, 230, 145, 0.9);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 30px rgba(255, 171, 64, 0.5);
+        animation: bounce 6s ease-in-out infinite;
+        margin-bottom: 2rem;
+      }
+
+      .festival-zone .pathway-header {
+        color: rgba(255, 64, 129, 0.9);
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                     0 0 20px rgba(255, 64, 129, 0.4);
+        letter-spacing: 4px;
+      }
+
+      .festival-zone .pathway-text {
+        color: rgba(51, 51, 51, 0.9);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .festival-zone .info-grids {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .festival-zone .info-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1rem;
+        background: #efebaf;
+        padding: 1rem;
+        border-radius: 10px;
+        align-items: center;
+        transition: transform 0.3s ease;
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        .festival-zone .info-item {
+          flex-direction: row;
+        }
+      }
+      @media (max-width: 375px) {
+  .festival-zone .pathway-header {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .festival-zone .nav-button {
+    font-size: 2rem;
+  }
+
+  .festival-zone .ferris-wheel {
+    width: 60px;
+    height: 60px;
+  }
+}
+      .festival-zone .info-item:hover {
+        transform: translateX(10px);
+      }
+
+      .festival-zone .info-image {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .festival-zone .info-title {
+  color: rgba(51, 51, 51, 0.9);
+  font-size: clamp(1.2rem, 4vw + 0.5rem, 1.8rem); /* Fluid typography */
+  font-weight: 700; /* Bold with more weight options */
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 0.3rem;
+  text-transform: capitalize;
+}
+
+.festival-zone .info-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(255, 64, 129, 0.6);
+  transform: translateX(-50%);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.festival-zone .info-title:hover {
+  color: rgba(255, 64, 129, 0.9);
+  transform: translateY(-3px);
+  text-shadow: 1px 1px 3px rgba(255, 64, 129, 0.3);
+}
+
+.festival-zone .info-title:hover::after {
+  width: 50px;
+  background-color: rgba(255, 64, 129, 0.9);
+}
+
+.festival-zone .info-date {
+  color: rgba(102, 102, 102, 0.9);
+  font-size: clamp(1rem, 3.5vw + 0.3rem, 1.4rem); /* Fluid typography */
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  
+}
+
+.festival-zone .info-date:hover {
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .festival-zone .info-title,
+  .festival-zone .info-date {
+    text-align: left;
+  }
+
+  .festival-zone .info-title::after {
+    left: 0;
+    transform: none;
+  }
+
+  .festival-zone .info-title:hover {
+    transform: translateX(5px);
+  }
+}
+
+/* Enhanced Large Screen Styles */
+@media (min-width: 1200px) {
+  .festival-zone .info-title {
+    font-size: clamp(1.3rem, 4vw + 0.6rem, 2rem);
+    letter-spacing: 0.7px;
+  }
+
+  .festival-zone .info-date {
+    font-size: clamp(1.1rem, 3.5vw + 0.4rem, 1.5rem);
+    letter-spacing: 0.4px;
+  }
+}
+
+/* Small Screen Optimization */
+@media (max-width: 375px) {
+  .festival-zone .info-title {
+    font-size: clamp(1rem, 4vw + 0.3rem, 1.5rem);
+  }
+
+  .festival-zone .info-date {
+    font-size: clamp(0.9rem, 3.5vw + 0.2rem, 1.2rem);
+  }
+}
+
+
+      @media (min-width: 768px) {
+        .festival-zone .info-title,
+        .festival-zone .info-date {
+          text-align: left;
+        }
+      }
+
+      .festival-zone .carousel-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+      }
+
+      .festival-zone .control-button {
+        background: none;
+        border: none;
+        color: rgba(255, 64, 129, 0.9);
+        font-size: 3rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 1rem;
+      }
+
+      .festival-zone .control-button:hover {
+        color: rgba(255, 171, 64, 1);
+        transform: scale(1.2);
+      }
+
+      .festival-zone .track-dots {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .festival-zone .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(102, 102, 102, 0.6);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .festival-zone .dot.active {
+        background: rgba(255, 64, 129, 0.9);
+        width: 40px;
+        border-radius: 6px;
+      }
+
+      .festival-zone .dot:hover {
+        background: rgba(255, 171, 64, 1);
+      }
+
+      .festival-zone .rotating-wheel {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+        border: 4px dotted rgba(255, 64, 129, 0.7);
+        border-radius: 50%;
+        animation: rotate 10s linear infinite;
+      }
+
+    </style>
+
+    <div class="rotating-wheel"></div>
+    <div class="content-wrapper">
+      <div class="pathway-content">
+        <h1 class="pathway-header">Loading...</h1>
+        <p class="pathway-text"></p>
+        <div class="info-grids"></div>
+        <div class="carousel-controls">
+          <button class="control-button prev-btn">←</button>
+          <button class="control-button next-btn">→</button>
         </div>
-
-        <!-- Day Information -->
-        <div class="col-xl-9 col-lg-9" style="color: #fff;">
-         
-          <!-- Workshop Sessions -->
-         
-    <section style="font-family: 'Inter', system-ui, -apple-system, sans-serif;  margin: 0; padding: 40px 20px; min-height: 100vh; animation: backgroundShift 20s ease infinite;">
-      
-  
-      <section style="max-width: 1200px; margin: 0 auto; padding: 30px; border: none; border-radius: 20px; background: #ece691; backdrop-filter: blur(10px); position: relative; overflow: hidden;">
-          
-          <!-- Decorative carnival elements -->
-          <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: linear-gradient(45deg, #FFD700, #FFA500); border-radius: 50%; opacity: 0.5; animation: float 3s ease-in-out infinite;"></div>
-          <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; background: linear-gradient(45deg, #FF69B4, #FF1493); border-radius: 50%; opacity: 0.5; animation: float 4s ease-in-out infinite;"></div>
-  
-          <h2 style="color:  #0181F5; text-align: center; margin-bottom: 30px; font-size: 2.5rem; font-weight: 800; position: relative; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); animation: bounce 2s ease-in-out infinite; ">
-             DAY 02
-          </h2>
-          
-          <div style="display: grid; gap: 25px;">
-              <!-- MakerSpace Section -->
-              <div style="background: linear-gradient(145deg, #FF6B6B, #FFE66D); padding: 20px; border-radius: 15px; position: relative; overflow: hidden;">
-                  <h3 style="color: #fff; margin: 0 0 15px 0; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); display: flex; align-items: center;">
-                      🎨 MakerSpace
-                  </h3>
-                  <div class="carousel" id="carousel-akespace">
-                      <div class="carousel-container">
-                          <div class="carousel-item">
-                              <img src="https://i.ibb.co/9nn7CNt/flash.png" alt="Robotics Workshop">
-                              <div>
-                                  <h4>Flash Talk</h4>
-                                  <p>10:00 AM - 11:10 AM</p>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Robotics Workshop">
-                            <div>
-                                <h4>Networking Activity</h4>
-                                <p>11:20 AM - 12:00 PM</p>
-                            </div>
-                        </div>
-                          <div class="carousel-item">
-                              <img src="https://i.ibb.co/ZW2dykt/story-of-ai.png" alt="3D Printing Demo">
-                              <div>
-                                  <h4>GenAI Workshop</h4>
-                                  <p>2:00 PM - 4:00 PM</p>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="https://media.licdn.com/dms/image/D4D12AQFiOV5OmWAf6Q/article-cover_image-shrink_720_1280/0/1707192384162?e=2147483647&v=beta&t=d8zQyoJpWqXbo7yQ-0kWjPVYZSXVw71J3e9Tt_TvoE4" alt="3D Printing Demo">
-                            <div>
-                                <h4>Robotics Workshop</h4>
-                                <p>2:00 PM - 4:00 PM</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                          <img src="https://i.ibb.co/9nn7CNt/flash.png" alt="Robotics Workshop">
-                          <div>
-                              <h4>Flash Talk</h4>
-                              <p>4:00 AM - 5:10 AM</p>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Robotics Workshop">
-                        <div>
-                            <h4>Networking Activity</h4>
-                            <p>5:10 AM - 6:00 PM</p>
-                        </div>
-                    </div>
-
-                      </div>
-                      <button class="carousel-button left" onclick="moveCarousel('carousel-akespace', 'left')">&#10094;</button>
-                      <button class="carousel-button right" onclick="moveCarousel('carousel-akespace', 'right')">&#10095;</button>
-                  </div>
-              </div>
-  
-              <!-- Conference Hall Section -->
-              <div style="background: linear-gradient(145deg, #4ECDC4, #45B7D1); padding: 20px; border-radius: 15px; position: relative; overflow: hidden;">
-                  <h3 style="color: #fff; margin: 0 0 15px 0; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); display: flex; align-items: center;">
-                      🎭 Conference Hall
-                  </h3>
-                  <div class="carousel" id="carousel-onference">
-                      <div class="carousel-container">
-                          <div class="carousel-item">
-                              <img src="https://i.ibb.co/bHQ4zhM/money-matter.png" alt="Keynote Address">
-                              <div>
-                                  <h4>Money Matters</h4>
-                                  <p>10:00 AM - 12:00 PM</p>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPNQBk4d5HZzvMD9RcSTbC-kmKALzrprqkI0LQABQ2e0z7HkdFFi8PKvbvml9bLL3QTts&usqp=CAU" alt="Panel Discussion on AI">
-                              <div>
-                                  <h4>Understanding Bias</h4>
-                                  <p>2:00 PM - 4:00 PM</p>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="https://i.ibb.co/nc2tPq1/resin.png" alt="Panel Discussion on AI">
-                            <div>
-                                <h4>Resin Workshop</h4>
-                                <p>4:00 PM - 6:00 PM</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                          <img src="https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1733815523541242910TV%20-%209.png" alt="Panel Discussion on AI">
-                          <div>
-                              <h4>TinkerHub Story</h4>
-                              <p>6:00 PM - 8:00 PM</p>
-                          </div>
-                      </div>
-                      </div>
-                      <button class="carousel-button left" onclick="moveCarousel('carousel-onference', 'left')">&#10094;</button>
-                      <button class="carousel-button right" onclick="moveCarousel('carousel-onference', 'right')">&#10095;</button>
-                  </div>
-              </div>
-  
-              <!-- Event Hall Section -->
-              <div style="background: linear-gradient(145deg, #FF69B4, #FF1493); padding: 20px; border-radius: 15px; position: relative; overflow: hidden;">
-                  <h3 style="color: #fff; margin: 0 0 15px 0; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); display: flex; align-items: center;">
-                      🎪 Event Hall
-                  </h3>
-                  <div class="carousel" id="carousel-even">
-                      <div class="carousel-container">
-                          <div class="carousel-item">
-                              <img src="https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg" alt="Magic Show">
-                              <div>
-                                  <h4>Project Exhibition</h4>
-                                  <p>10:00 AM - 3:20 PM </p>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                              <img src="https://www.eventible.com/learning/wp-content/uploads/2023/08/panel-discussions-1024x517.png" alt="Stand-Up Comedy">
-                              <div>
-                                  <h4>Networking Activity</h4>
-                                  <p>3:20 PM - 4:00 PM</p>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ1SrdhrJ_-tsrJJsdxMEE782Y6LtqN5VuRA&s" alt="Stand-Up Comedy">
-                            <div>
-                                <h4>Shasn Game Night</h4>
-                                <p>4:00 PM - 6:00 PM</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                          <img src="https://i.ibb.co/G2LG5ZR/open-mic.png" alt="Stand-Up Comedy">
-                          <div>
-                              <h4>Open Mic - TinkerSpace’s Family </h4>
-                              <p>6:00 PM - 8:00 PM</p>
-                          </div>
-                      </div>
-                      </div>
-                      <button class="carousel-button left" onclick="moveCarousel('carousel-even', 'left')">&#10094;</button>
-                      <button class="carousel-button right" onclick="moveCarousel('carousel-even', 'right')">&#10095;</button>
-                  </div>
-              </div>
-                                  <!-- Lobby -->
-            <div class="event-section" style="background: linear-gradient(145deg, #8A4FFF, #5F27CD);">
-              <h3>🎮 Lobby</h3>
-              <div class="carousel" id="carousel-gamin">
-                  <div class="carousel-container">
-                      <div class="carousel-item">
-                          <img src="https://media.istockphoto.com/id/182176314/photo/blond-girl-getting-a-butterfly-painted-on-her-face.jpg?s=612x612&w=0&k=20&c=sbxC8dVz-i1CqnBln4Yd9kKuyKYlKoS5U5jVlKocrGk=" alt="eSports Tournament">
-                          <div>
-                              <h4>Face Painting</h4>
-                              <p>10:00 PM - 12:00 PM</p>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="https://m.media-amazon.com/images/I/81zgt6BbEIL.jpg" alt="VR Gaming Experience">
-                          <div>
-                              <h4>Pot Painting</h4>
-                              <p>2:00 PM - 4:00 PM</p>
-                          </div>
-                      </div>
-                  </div>
-                  <button class="carousel-button left" onclick="moveCarousel('carousel-gamin', 'left')">&#10094;</button>
-                  <button class="carousel-button right" onclick="moveCarousel('carousel-gamin', 'right')">&#10095;</button>
-              </div>
-          </div>
-
-          <!-- Meeting Room -->
-          <div class="event-section" style="background: linear-gradient(145deg, #FF6B35, #F7B32D);">
-              <h3> 🎡  Meeting Room</h3>
-              <div class="carousel" id="carousel-foo">
-                  <div class="carousel-container">
-                      <div class="carousel-item">
-                          <img src="https://img.freepik.com/premium-vector/flat-gamer-room-illustration_23-2148919465.jpg" alt="Cooking Masterclass">
-                          <div>
-                              <h4>Game Room</h4>
-                              <p>10:00 AM - 12:00 PM</p>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZxhqwUj0ZR-XEw0D9sSRj2-Jb-siZb_VrkQ&s" alt="Global Food Tasting">
-                          <div>
-                              <h4>Game Room</h4>
-                              <p>2:00 PM - 4:00 PM</p>
-                          </div>
-                      </div>
-
-                      <div class="carousel-item">
-                        <img src="https://img.freepik.com/free-vector/cartoon-gamer-room-illustration_23-2148916747.jpg" alt="Global Food Tasting">
-                        <div>
-                            <h4>Game Room</h4>
-                            <p>4:00 PM - 6:00 PM</p>
-                        </div>
-                    </div>
-                  </div>
-                  <button class="carousel-button left" onclick="moveCarousel('carousel-foo', 'left')">&#10094;</button>
-                  <button class="carousel-button right" onclick="moveCarousel('carousel-foo', 'right')">&#10095;</button>
-              </div>
-          </div>
-          </div>
-      </section>
-  
-      <script>
-          function moveCarousel(carouselId, direction) {
-              const carousel = document.getElementById(carouselId);
-              const carouselContainer = carousel.querySelector('.carousel-container');
-              const items = carouselContainer.querySelectorAll('.carousel-item');
-              let currentIndex = parseInt(carousel.dataset.index) || 0;
-  
-              if (direction === 'left') {
-                  currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
-              } else {
-                  currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
-              }
-  
-              carousel.dataset.index = currentIndex;
-              const offset = -currentIndex * (items[0].offsetWidth + 20);
-              carouselContainer.style.transform = `translateX(${offset}px)`;
-          }
-      </script>
-      <style>
-        .carousel {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .carousel-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 20px;
-            transition: transform 0.5s ease;
-            width: 100%;
-        }
-
-        .carousel-item {
-            flex: 0 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 10px;
-            background: rgba(255,255,255,0.2);
-            padding: 15px;
-            border-radius: 10px;
-            width: 250px;
-        }
-
-        .carousel-item img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .carousel-item div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        .carousel-item h4 {
-            color: #fff;
-            margin-bottom: 5px;
-            font-size: 1.2rem;
-        }
-
-        .carousel-item p {
-            color: rgba(255,255,255,0.8);
-            font-size: 1rem;
-        }
-
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 10;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .carousel-button:hover {
-            opacity: 1;
-        }
-
-        .carousel-button.left {
-            left: 0;
-        }
-
-        .carousel-button.right {
-            right: 0;
-        }
-
-        #carousel-makespace { background: linear-gradient(145deg, #FF6B6B, #FFE66D); }
-        #carousel-conference { background: linear-gradient(145deg, #4ECDC4, #45B7D1); }
-   
-  </style>
-
-  </section>
-
-        </div>
+        <div class="track-dots"></div>
       </div>
     </div>
-  </div>
-</div>
+    <script>
+        (function() {
+          const pathwaysList = [
+            { 
+              id: 1, 
+              name: 'Maker Space',
+              description: 'Step right up to see TinkerSpace Carnival!',
+              items: [
+                { image: 'https://i.ibb.co/9nn7CNt/flash.png', title: 'Flash Talk', date: '10:00 AM - 11:10 AM' },
+                { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '11:20 AM - 12:00 PM' },
+                { image: 'https://i.ibb.co/ZW2dykt/story-of-ai.png', title: 'GenAI Workshop', date: '2:00 PM - 4:00 PM' },
+                { image: 'https://media.licdn.com/dms/image/D4D12AQFiOV5OmWAf6Q/article-cover_image-shrink_720_1280/0/1707192384162?e=2147483647&v=beta&t=d8zQyoJpWqXbo7yQ-0kWjPVYZSXVw71J3e9Tt_TvoE4', title: 'Robotics Workshop', date: '2:00 PM - 4:00 PM' },
+                { image: 'https://i.ibb.co/9nn7CNt/flash.png" alt="Robotics Workshop', title: 'Flash Talk', date: '4:00 AM - 5:10 AM' },
+                { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '5:10 AM - 6:00 PM' },
+              ]
+            },
+            { 
+              id: 2, 
+              name: 'Conference Hall',
+              description: 'Marvel at the spectacular show of the DAY!',
+              items: [
+                { image: 'https://i.ibb.co/bHQ4zhM/money-matter.png', title: 'Money Matter', date: '10:00 AM - 12:00 PM' },
+                { image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPNQBk4d5HZzvMD9RcSTbC-kmKALzrprqkI0LQABQ2e0z7HkdFFi8PKvbvml9bLL3QTts&usqp=CAU', title: 'Understanding Bias', date: '2:00 PM - 4:00 PM' },
+                { image: 'https://i.ibb.co/nc2tPq1/resin.png', title: 'Resin Workshop', date: '4:00 PM - 6:00 PM' },
+                { image: 'https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1733815523541242910TV%20-%209.png', title: 'TinkerHub Story', date: '6:00 PM - 8:00 PM' }
+              ]
+            },
+            { 
+              id: 3, 
+              name: 'Event Hall',
+              description: 'Behold the greatest workshops and events!',
+              items: [
+                { image: 'https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg', title: 'Project Exhibition', date: '10:00 AM - 3:20 PM ' },
+                { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '3:20 PM - 4:00 PM' },
+                { image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ1SrdhrJ_-tsrJJsdxMEE782Y6LtqN5VuRA&s" alt="Stand-Up Comedy', title: 'Shasn Game Night', date: '4:00 PM - 6:00 PM' },
+                { image: 'https://i.ibb.co/G2LG5ZR/open-mic.png', title: 'Open Mic - TinkerSpace’s Family', date: '6:00 PM - 8:00 PM' }
+              ]
+            }
+            ,
+            { 
+              id: 4, 
+              name: 'Lobby',
+              description: 'Marvel at the spectacular shows of TinkerSpace!',
+            items: [
+              
+              { image: 'https://media.istockphoto.com/id/182176314/photo/blond-girl-getting-a-butterfly-painted-on-her-face.jpg?s=612x612&w=0&k=20&c=sbxC8dVz-i1CqnBln4Yd9kKuyKYlKoS5U5jVlKocrGk=', title: 'Face Painting', date: '10:00 AM - 12:00 PM ' },
+              { image: 'https://m.media-amazon.com/images/I/81zgt6BbEIL.jpg', title: 'Pot Painting', date: '2:00 PM - 4:00 PM' },
+              ]
+            },
+            { 
+              id: 5, 
+              name: 'Meeting Room',
+              description: 'Step right up to see innovative events!',
+              items: [
+              { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '10:00 AM - 12:00 PM & 2:00 PM - 4:00 PM & 4:00 PM - 6:00 PM' },
+              
+              ]
+            }
+          ];
+    
+          let currentIndex = 0;
+          let autoplayEnabled = true;
+          let autoplayTimer;
+          const zone = document.querySelector('#festival-pathways');
+    
+          function createSparkles() {
+            const sparkleColors = [
+              'rgba(255, 64, 129, 0.8)', 
+              'rgba(255, 171, 64, 0.8)', 
+              'rgba(64, 202, 255, 0.8)', 
+              'rgba(193, 98, 171, 0.8)', 
+              'rgba(102, 255, 102, 0.8)'
+            ];
+            for(let i = 0; i < 50; i++) {
+              const sparkle = document.createElement('div');
+              sparkle.className = 'sparkle';
+              sparkle.style.left = Math.random() * 100 + 'vw';
+              sparkle.style.animationDelay = Math.random() * 3 + 's';
+              sparkle.style.backgroundColor = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
+              zone.appendChild(sparkle);
+            }
+          }
+    
+          function refreshPathway() {
+            const pathway = pathwaysList[currentIndex];
+            zone.querySelector('.pathway-header').textContent = pathway.name;
+            zone.querySelector('.pathway-text').textContent = pathway.description;
+            
+            const grids = zone.querySelector('.info-grids');
+            grids.innerHTML = '';
+            pathway.items.forEach(item => {
+              const itemElement = document.createElement('div');
+              itemElement.className = 'info-item';
+              itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.title}" class="info-image">
+                <div class="info-title">${item.title}</div>
+                <div class="info-date">${item.date}</div>
+              `;
+              grids.appendChild(itemElement);
+            });
+            
+            zone.querySelectorAll('.dot').forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentIndex);
+            });
+          }
+    
+          function goToPrevious() {
+            currentIndex = currentIndex === 0 ? pathwaysList.length - 1 : currentIndex - 1;
+            refreshPathway();
+            stopAutoplay();
+          }
+    
+          function goToNext() {
+            currentIndex = (currentIndex + 1) % pathwaysList.length;
+            refreshPathway();
+            stopAutoplay();
+          }
+
+          function stopAutoplay() {
+            if (autoplayEnabled) {
+              clearInterval(autoplayTimer);
+              autoplayEnabled = false;
+            }
+          }
+
+          function initDots() {
+            const dotsContainer = zone.querySelector('.track-dots');
+            dotsContainer.innerHTML = '';
+            pathwaysList.forEach((_, index) => {
+              const dot = document.createElement('div');
+              dot.className = 'dot';
+              dot.addEventListener('click', () => {
+                currentIndex = index;
+                refreshPathway();
+                stopAutoplay();
+              });
+              dotsContainer.appendChild(dot);
+            });
+          }
+
+          createSparkles();
+          refreshPathway();
+          initDots();
+          autoplayTimer = setInterval(goToNext, 5000);
+
+          zone.querySelector('.prev-btn').addEventListener('click', goToPrevious);
+          zone.querySelector('.next-btn').addEventListener('click', goToNext);
+        })();
+    </script>
+</section>
 
 
-     
-  
+
+
+
+
+
 
     <footer style="background-color: #0181F5; color: white; padding: 60px 0 40px; font-family: 'Inter', system-ui, -apple-system, sans-serif; position: relative; margin-top: 30px;">
-      <!-- Decorative Circle -->
-      <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);">
-        <div style="background-color: #ffc700; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-        </div>
-      </div>
+     
+      
     
       <div style="max-width: 1200px; margin: auto; padding: 0 20px;">
         <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
@@ -1225,7 +1582,7 @@
           <div style="flex: 1; min-width: 250px;">
             <h3 style="color: #ffc700; font-size: 1.5rem; margin-bottom: 20px; font-weight: 600;">Venue</h3>
             <p style="margin: 0; color : white; line-height: 1.6;">
-              Tinkerspace ,Kochi<br />
+              Tinkerspace, Kochi<br />
               <a style="color: white; text-decoration: none; transition: color 0.3s;" 
                  onmouseover="this.style.color='#ffc700'" 
                  onmouseout="this.style.color='white'"
@@ -1249,7 +1606,13 @@
                target="_blank" 
                style="color: #ffc700; text-decoration: none; transition: opacity 0.3s;" 
                onmouseover="this.style.opacity='0.8'" 
-               onmouseout="this.style.opacity='1'">ebin</a>
+               onmouseout="this.style.opacity='1'">EBIN</a>
+               and 
+               <a href="https://www.linkedin.com/in/ishika-ishani/" 
+               target="_blank" 
+               style="color: #ffc700; text-decoration: none; transition: opacity 0.3s;" 
+               onmouseover="this.style.opacity='0.8'" 
+               onmouseout="this.style.opacity='1'">ISHIKA</a>
           </p>
         </div>
       </div>
