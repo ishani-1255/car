@@ -436,6 +436,7 @@
       }
   
       .carnival-section .track-content {
+        position: relative;
         text-align: center;
         padding: 2rem;
         background: rgba(236, 230, 145, 0.9);
@@ -606,24 +607,41 @@
   
       .carnival-section .carousel-nav {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  
       }
   
       .carnival-section .nav-button {
-        background: none;
-        border: none;
-        color: rgba(255, 64, 129, 0.9);
-        font-size: 3rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        padding: 1rem;
+        background: rgba(254, 109, 157, 0.7);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 1rem;
+
+  pointer-events: aut
       }
+
+      .carnival-section .nav-button .prev-button {
+  left: 0;
+  border-radius: 0 10px  10px 0;
+}
+
+.carnival-section .nav-button .next-button {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
   
       .carnival-section .nav-button:hover {
-        color: rgba(255, 171, 64, 1);
-        transform: scale(1.2);
+        background: rgba(255, 171, 64, 1);
+  transform: scale(1.1);
       }
   
       .carnival-section .indicators {
@@ -685,152 +703,166 @@
       </div>
     </div>
     <script>
-        (function() {
-          const tracksData = [
-            { 
-              id: 1, 
-              name: 'Maker Space',
-              description: 'Step right up to see innovative events!',
-              rows: [
-                { image: 'https://i.ibb.co/mHPHfDj/game-design.png', title: 'Game Development', date: '10:00 AM - 12:00 PM' },
-                { image: 'https://i.ibb.co/Vgpb174/Instagram-post-18-8.png', title: 'Toy Making', date: '2:00 PM - 4:00 PM' },
-                { image: 'https://i.ibb.co/Bs37chd/origami.png', title: 'Origami Workshop', date: '4:00 PM - 6:00 PM' },
-              ]
-            },
-            { 
-              id: 2, 
-              name: 'Conference Hall ',
-              description: 'Marvel at the spectacular shows of TinkerSpace!',
-              rows: [
-                { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '10:00 AM - 11:20 AM' },
-                { image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZAAQewtAO_UjGYnnHoAHEwduPutz80Muf2g&s', title: 'Board Games', date: '11:20 AM -  12:00 PM' },
-                { image: 'https://i.ibb.co/mbthGF1/crochet.png', title: 'Crochet Workshop', date: '2:00 PM -  4:00 PM' },
-                { image: 'https://media.licdn.com/dms/image/v2/D5622AQHCzC59LQEA4A/feedshare-shrink_800/feedshare-shrink_800/0/1733634916537?e=2147483647&v=beta&t=KnzVZKJSzAFVcW3_v2NfNRe312MQJwdpftwUKFp0TUw', title: 'Design Literacy', date: '4:00 PM -  6:00 PM' }
-              ]
-            },
-            { 
-              id: 3, 
-              name: 'Event Hall',
-              description: 'Behold the greatest show & workshops!',
-              rows: [
-                { image: 'https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg', title: 'Project Exhibition', date: '11:20 AM - 12:00 PM' },
-                { image: 'https://i.ibb.co/9nn7CNt/flash.png', title: 'Flash Talk', date: '2:00 PM - 3:20PM' },
-                { image: 'https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg', title: 'Project Exhibition', date: '3:20 PM - 4:00 PM' },
-                { image: 'https://i.ibb.co/9nn7CNt/flash.png', title: 'Flash Talk', date: '4:00 PM - 5:20PM' },
-                { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '5:20 PM - 6:00 PM' },
-                { image: 'https://media.licdn.com/dms/image/v2/D5622AQEnWeGJ3MuwIQ/feedshare-shrink_800/feedshare-shrink_800/0/1733761893569?e=2147483647&v=beta&t=COiPd68nV9meqPE1lIAk_wYladBfWZRkH2aDj1lpqaQ" alt="Keynote Address', title: 'Saas Tech Stand-Up', date: '6:00 PM - 8:00 PM' }
-              ]
-            },
-            { 
-              id: 4, 
-              name: 'Lobby',
-              description: 'Marvel at the spectacular shows of TinkerSpace!',
-              rows: [
-              { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '10:00 AM - 12:00 PM & 2:00 PM - 4:00 PM' },
-              ]
-            },
-            { 
-              id: 5, 
-              name: 'Meeting Room',
-              description: 'Step right up to see innovative events!',
-              rows: [
-              { image: 'https://img.freepik.com/free-vector/cartoon-gamer-room-illustration_23-2148916747.jpg', title: 'Game Rooms', date: '10:00 AM - 12:00 PM & 2:00 PM - 4:00 PM' },
-              { image: 'https://bloximages.newyork1.vip.townnews.com/appeal-democrat.com/content/tncms/assets/v3/editorial/6/74/674fceba-db22-11ed-b4e4-fb89fe525939/6439ec40ac95d.image.jpg?resize=1200%2C900', title: 'VR Room', date: '4:00 PM - 6:00 PM' },
-              
-              ]
-            }
-          ];
+       (function() {
+  const tracksData = [
+    { 
+      id: 1, 
+      name: 'Maker Space',
+      description: 'Step right up to see innovative events!',
+      rows: [
+        { image: 'https://i.ibb.co/mHPHfDj/game-design.png', title: 'Game Development', date: '10:00 AM - 12:00 PM' },
+        { image: 'https://i.ibb.co/Vgpb174/Instagram-post-18-8.png', title: 'Toy Making', date: '2:00 PM - 4:00 PM' },
+        { image: 'https://i.ibb.co/Bs37chd/origami.png', title: 'Origami Workshop', date: '4:00 PM - 6:00 PM' },
+      ]
+    },
+    { 
+      id: 2, 
+      name: 'Conference Hall ',
+      description: 'Marvel at the spectacular shows of TinkerSpace!',
+      rows: [
+        { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '10:00 AM - 11:20 AM' },
+        { image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZAAQewtAO_UjGYnnHoAHEwduPutz80Muf2g&s', title: 'Board Games', date: '11:20 AM -  12:00 PM' },
+        { image: 'https://i.ibb.co/mbthGF1/crochet.png', title: 'Crochet Workshop', date: '2:00 PM -  4:00 PM' },
+        { image: 'https://media.licdn.com/dms/image/v2/D5622AQHCzC59LQEA4A/feedshare-shrink_800/feedshare-shrink_800/0/1733634916537?e=2147483647&v=beta&t=KnzVZKJSzAFVcW3_v2NfNRe312MQJwdpftwUKFp0TUw', title: 'Design Literacy', date: '4:00 PM -  6:00 PM' }
+      ]
+    },
+    { 
+      id: 3, 
+      name: 'Event Hall',
+      description: 'Behold the greatest show & workshops!',
+      rows: [
+        { image: 'https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg', title: 'Project Exhibition', date: '11:20 AM - 12:00 PM' },
+        { image: 'https://i.ibb.co/9nn7CNt/flash.png', title: 'Flash Talk', date: '2:00 PM - 3:20PM' },
+        { image: 'https://pbs.twimg.com/media/GeGdTsQakAIBjwJ.jpg', title: 'Project Exhibition', date: '3:20 PM - 4:00 PM' },
+        { image: 'https://i.ibb.co/9nn7CNt/flash.png', title: 'Flash Talk', date: '4:00 PM - 5:20PM' },
+        { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '5:20 PM - 6:00 PM' },
+        { image: 'https://media.licdn.com/dms/image/v2/D5622AQEnWeGJ3MuwIQ/feedshare-shrink_800/feedshare-shrink_800/0/1733761893569?e=2147483647&v=beta&t=COiPd68nV9meqPE1lIAk_wYladBfWZRkH2aDj1lpqaQ" alt="Keynote Address', title: 'Saas Tech Stand-Up', date: '6:00 PM - 8:00 PM' }
+      ]
+    },
+    { 
+      id: 4, 
+      name: 'Lobby',
+      description: 'Marvel at the spectacular shows of TinkerSpace!',
+      rows: [
+      { image: 'https://ucare.inhersight.com/782902c7-fda7-461e-9086-d8b2e01445fe/-/format/auto/-/quality/lighter/-/progressive/yes/-/resize/800x/', title: 'Networking Activity', date: '10:00 AM - 12:00 PM & 2:00 PM - 4:00 PM' },
+      ]
+    },
+    { 
+      id: 5, 
+      name: 'Meeting Room',
+      description: 'Step right up to see innovative events!',
+      rows: [
+      { image: 'https://img.freepik.com/free-vector/cartoon-gamer-room-illustration_23-2148916747.jpg', title: 'Game Rooms', date: '10:00 AM - 12:00 PM & 2:00 PM - 4:00 PM' },
+      { image: 'https://bloximages.newyork1.vip.townnews.com/appeal-democrat.com/content/tncms/assets/v3/editorial/6/74/674fceba-db22-11ed-b4e4-fb89fe525939/6439ec40ac95d.image.jpg?resize=1200%2C900', title: 'VR Room', date: '4:00 PM - 6:00 PM' },
+      ]
+    }
+  ];
+
+  let currentTrackIndex = 0;
+  let isAutoPlaying = true;
+  let autoPlayInterval;
+  const section = document.querySelector('.carnival-section');
+
+  function createConfetti() {
+    const confettiColors = [
+      'rgba(255, 64, 129, 0.8)', 
+      'rgba(255, 171, 64, 0.8)', 
+      'rgba(64, 202, 255, 0.8)', 
+      'rgba(193, 98, 171, 0.8)', 
+      'rgba(102, 255, 102, 0.8)'
+    ];
+    for(let i = 0; i < 50; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDelay = Math.random() * 3 + 's';
+      confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      section.appendChild(confetti);
+    }
+  }
+
+  function updateTrack() {
+    const track = tracksData[currentTrackIndex];
+    section.querySelector('.track-title').textContent = track.name;
+    section.querySelector('.track-description').textContent = track.description;
     
-          let currentTrackIndex = 0;
-          let isAutoPlaying = true;
-          let autoPlayInterval;
-          const section = document.querySelector('#carnival-tracks');
+    const contentRowsContainer = section.querySelector('.content-rows');
+    contentRowsContainer.innerHTML = '';
+    track.rows.forEach(row => {
+      const rowElement = document.createElement('div');
+      rowElement.className = 'content-row';
+      rowElement.innerHTML = `
+        <img src="${row.image}" alt="${row.title}" class="content-image">
+        <div class="content-title">${row.title}</div>
+        <div class="content-date">${row.date}</div>
+      `;
+      contentRowsContainer.appendChild(rowElement);
+    });
     
-          function createConfetti() {
-            const confettiColors = [
-              'rgba(255, 64, 129, 0.8)', 
-              'rgba(255, 171, 64, 0.8)', 
-              'rgba(64, 202, 255, 0.8)', 
-              'rgba(193, 98, 171, 0.8)', 
-              'rgba(102, 255, 102, 0.8)'
-            ];
-            for(let i = 0; i < 50; i++) {
-              const confetti = document.createElement('div');
-              confetti.className = 'confetti';
-              confetti.style.left = Math.random() * 100 + 'vw';
-              confetti.style.animationDelay = Math.random() * 3 + 's';
-              confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-              section.appendChild(confetti);
-            }
-          }
+    section.querySelectorAll('.indicator').forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === currentTrackIndex);
+    });
+  }
+
+  function handlePrev() {
+    currentTrackIndex = currentTrackIndex === 0 ? tracksData.length - 1 : currentTrackIndex - 1;
+    updateTrack();
+    stopAutoPlay();
+  }
+
+  function handleNext() {
+    currentTrackIndex = currentTrackIndex === tracksData.length - 1 ? 0 : currentTrackIndex + 1;
+    updateTrack();
+    stopAutoPlay();
+  }
+
+  function stopAutoPlay() {
+    isAutoPlaying = false;
+    clearInterval(autoPlayInterval);
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(handleNext, 5000);
+  }
+
+  function initCarousel() {
+    const indicatorsContainer = section.querySelector('.indicators');
+    indicatorsContainer.innerHTML = ''; // Clear existing indicators
+    tracksData.forEach((_, index) => {
+      const indicator = document.createElement('button');
+      indicator.className = 'indicator' + (index === 0 ? ' active' : '');
+      indicator.addEventListener('click', () => {
+        currentTrackIndex = index;
+        updateTrack();
+        stopAutoPlay();
+      });
+      indicatorsContainer.appendChild(indicator);
+    });
+
+    // Ensure navigation buttons exist before adding event listeners
+    const prevButton = section.querySelector('.prev-button');
+    const nextButton = section.querySelector('.next-button');
     
-          function updateTrack() {
-            const track = tracksData[currentTrackIndex];
-            section.querySelector('.track-title').textContent = track.name;
-            section.querySelector('.track-description').textContent = track.description;
-            
-            const contentRowsContainer = section.querySelector('.content-rows');
-            contentRowsContainer.innerHTML = '';
-            track.rows.forEach(row => {
-              const rowElement = document.createElement('div');
-              rowElement.className = 'content-row';
-              rowElement.innerHTML = `
-                <img src="${row.image}" alt="${row.title}" class="content-image">
-                <div class="content-title">${row.title}</div>
-                <div class="content-date">${row.date}</div>
-              `;
-              contentRowsContainer.appendChild(rowElement);
-            });
-            
-            section.querySelectorAll('.indicator').forEach((indicator, index) => {
-              indicator.classList.toggle('active', index === currentTrackIndex);
-            });
-          }
+    if (prevButton) {
+      prevButton.addEventListener('click', handlePrev);
+    }
     
-          function handlePrev() {
-            currentTrackIndex = currentTrackIndex === 0 ? tracksData.length - 1 : currentTrackIndex - 1;
-            updateTrack();
-            stopAutoPlay();
-          }
-    
-          function handleNext() {
-            currentTrackIndex = currentTrackIndex === tracksData.length - 1 ? 0 : currentTrackIndex + 1;
-            updateTrack();
-            stopAutoPlay();
-          }
-    
-          function stopAutoPlay() {
-            isAutoPlaying = false;
-            clearInterval(autoPlayInterval);
-          }
-    
-          function startAutoPlay() {
-            autoPlayInterval = setInterval(handleNext, 5000);
-          }
-    
-          function initCarousel() {
-            const indicatorsContainer = section.querySelector('.indicators');
-            tracksData.forEach((_, index) => {
-              const indicator = document.createElement('button');
-              indicator.className = 'indicator' + (index === 0 ? ' active' : '');
-              indicator.addEventListener('click', () => {
-                currentTrackIndex = index;
-                updateTrack();
-                stopAutoPlay();
-              });
-              indicatorsContainer.appendChild(indicator);
-            });
-    
-            section.querySelector('.prev-button').addEventListener('click', handlePrev);
-            section.querySelector('.next-button').addEventListener('click', handleNext);
-    
-            startAutoPlay();
-            updateTrack();
-            createConfetti();
-          }
-    
-          initCarousel();
-        })();
+    if (nextButton) {
+      nextButton.addEventListener('click', handleNext);
+    }
+
+    startAutoPlay();
+    updateTrack();
+    createConfetti();
+  }
+
+  // Wait for DOM to be fully loaded before initializing
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  } else {
+    initCarousel();
+  }
+})();
       </script>
   </section>
 
@@ -1119,6 +1151,7 @@
         box-shadow: 0 0 30px rgba(255, 171, 64, 0.5);
         animation: bounce 6s ease-in-out infinite;
         margin-bottom: 2rem;
+        position: relative;
       }
 
       .festival-zone .pathway-header {
@@ -1293,25 +1326,42 @@
 
       .festival-zone .carousel-controls {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+
       }
 
       .festival-zone .control-button {
-        background: none;
-        border: none;
-        color: rgba(255, 64, 129, 0.9);
-        font-size: 3rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        padding: 1rem;
+        background: rgba(254, 109, 157, 0.7);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  pointer-events: auto;
+  z-index: 10;
       }
 
       .festival-zone .control-button:hover {
-        color: rgba(255, 171, 64, 1);
-        transform: scale(1.2);
+        background: rgba(255, 171, 64, 1);
+  transform: scale(1.1);
       }
+
+      .festival-zone .control-button.prev-btn {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.festival-zone .control-button.next-btn {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
 
       .festival-zone .track-dots {
         display: flex;
